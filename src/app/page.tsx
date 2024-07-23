@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./component/Navbar";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Footer from "./component/Footer";
 
 function page() {
   return (
@@ -96,7 +97,7 @@ function page() {
       {/* end section */}
       {/* product */}
       <section className="w-full bg-white mt-4">
-        <div className="max-w-screen-xl mx-auto p-4 py-20 grid grid-cols-4 gap-6 h-[570px]">
+        <div className="max-w-screen-xl mx-auto px-4 py-20 grid grid-cols-4 gap-6 h-[570px]">
           <div className="h-full flex flex-col me-4 justify-between">
             <div className="w-full">
               <h2 className="text-5xl font-bold text-slate-800 leading-tight">
@@ -106,7 +107,7 @@ function page() {
                 Dapatkan barang terbaru segera dengan harga promo
               </h4>
             </div>
-            <div className="flex items-center mb-6 cursor-pointer text-slate-700 hover:text-slate-800">
+            <div className="flex items-center mb-6 cursor-pointer text-slate-600 hover:text-slate-800">
               <h4 className="font-bold text-xl underline">Selengkapnya</h4>
               <FaArrowRightLong className="text-xl ms-2" />
             </div>
@@ -123,6 +124,37 @@ function page() {
         </div>
       </section>
       {/* end section */}
+      {/* gallery */}
+      <section className="w-full bg-white mt-4">
+        <div className="max-w-screen-xl mx-auto px-4 py-20">
+          <h2 className="text-5xl font-bold text-center text-slate-800">
+            Galeri Kami
+          </h2>
+          <h4 className="text-slate-400 text-xl text-center mt-3">
+            Beberapa referensi yang bisa kamu lihat untuk mempercantik setiap
+            sudut rumahmu
+          </h4>
+          <div className="grid grid-cols-3 gap-9 mt-12">
+            <div className="grid grid-rows-3 gap-9 mt-9">
+              <div className="h-[500px] bg-slate-200 rounded-tl-[66px]"></div>
+              <div className="h-[500px] bg-slate-200 rounded-tl-[66px]"></div>
+              <div className="h-[500px] bg-slate-200 rounded-tl-[66px]"></div>
+            </div>
+            <div className="grid grid-rows-3 gap-9">
+              <div className="h-[500px] bg-slate-200"></div>
+              <div className="h-[500px] bg-slate-200"></div>
+              <div className="h-[500px] bg-slate-200"></div>
+            </div>
+            <div className="grid grid-rows-3 gap-9 mt-9">
+              <div className="h-[500px] bg-slate-200 rounded-br-[66px]"></div>
+              <div className="h-[500px] bg-slate-200 rounded-br-[66px]"></div>
+              <div className="h-[500px] bg-slate-200 rounded-br-[66px]"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* end section */}
+      <Footer />
     </div>
   );
 }

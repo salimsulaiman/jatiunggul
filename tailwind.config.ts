@@ -11,6 +11,9 @@ const config: Config = {
       urbanist: ["Urbanist", "sans-serif"],
     },
     extend: {
+      colors: {
+        "primary-dark": "#273035",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
