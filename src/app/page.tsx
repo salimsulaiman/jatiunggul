@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "./component/Navbar";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Footer from "./component/Footer";
+import Navbar from "./component/Navbar";
 
 function page() {
   return (
@@ -140,7 +140,7 @@ function page() {
               <div className="h-[500px] bg-slate-200 rounded-tl-[66px]"></div>
               <div className="h-[500px] bg-slate-200 rounded-tl-[66px]"></div>
             </div>
-            <div className="grid grid-rows-3 gap-9">
+            <div className="grid grid-rows-3">
               <div className="h-[500px] bg-slate-200"></div>
               <div className="h-[500px] bg-slate-200"></div>
               <div className="h-[500px] bg-slate-200"></div>

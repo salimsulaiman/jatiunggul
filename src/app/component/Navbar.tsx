@@ -24,20 +24,21 @@ function Navbar() {
   return (
     <div
       className={`fixed top-0 right-0 left-0 ${
-        scrolling ? "bg-primary-dark shadow-md" : "bg-transparent"
+        scrolling ? "bg-primary-dark shadow-md" : "bg-transparent mt-2"
       } w-full z-10`}
     >
       <div
-        className={`max-w-screen-xl mx-auto px-4 py-8 text-white flex justify-between items-center`}
+        className={`max-w-screen-xl mx-auto px-4 py-4 text-white flex justify-between items-center`}
       >
         <Image
-          className="h-12 w-auto"
+          className="h-10 w-auto"
           src={"/logo-jatiunggul.png"}
           width={500}
           height={500}
           quality={100}
+          alt="logo"
         />
-        <ul className="flex text-xl">
+        <ul className="flex">
           <li>
             <Link href={"/#"} className="text-slate-200 hover:text-white ms-7">
               Beranda
