@@ -6,31 +6,31 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 function Footer() {
   return (
     <div className="w-full bg-primary-dark px-4 py-14">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-5 gap-7 h-full">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-6 gap-7 h-full">
         <div className="col-span-2 me-5">
-        <Image
-          className="h-12 w-auto"
-          src={"/logo-jatiunggul.png"}
-          width={500}
-          height={500}
-          quality={100}
-          alt="logo"
-        />
-        <h4 className="text-white mt-5">Sentuhan alami gaya elegan di setiap sudut ruangan, untuk menciptakan suasana yang nyaman dan memukau bagi Anda.</h4>
-        <div className="flex mt-5">
-          <div className="h-7 w-7 rounded-full bg-white me-4 flex items-center justify-center">
-            <FaFacebookF/>
+          <Image
+            className="h-12 w-auto"
+            src={"/logo-jatiunggul.png"}
+            width={500}
+            height={500}
+            quality={100}
+            alt="logo"
+          />
+          <h4 className="text-white mt-5">Sentuhan alami gaya elegan di setiap sudut ruangan, untuk menciptakan suasana yang nyaman dan memukau bagi Anda.</h4>
+          <div className="flex mt-5">
+            <div className="h-7 w-7 rounded-full bg-white me-4 flex items-center justify-center">
+              <FaFacebookF/>
+            </div>
+            <div className="h-7 w-7 rounded-full bg-white me-4 flex items-center justify-center">
+              <FaTwitter/>
+            </div>
+            <div className="h-7 w-7 rounded-full bg-white me-4 flex items-center justify-center">
+              <FaInstagram/>
+            </div>
+            <div className="h-7 w-7 rounded-full bg-white me-4 flex items-center justify-center">
+              <FaYoutube/>
+            </div>
           </div>
-          <div className="h-7 w-7 rounded-full bg-white me-4 flex items-center justify-center">
-            <FaTwitter/>
-          </div>
-          <div className="h-7 w-7 rounded-full bg-white me-4 flex items-center justify-center">
-            <FaInstagram/>
-          </div>
-          <div className="h-7 w-7 rounded-full bg-white me-4 flex items-center justify-center">
-            <FaYoutube/>
-          </div>
-        </div>
         </div>
         <div className="">
           <h4 className="text-white font-semibold mb-5">Halaman</h4>
@@ -52,7 +52,7 @@ function Footer() {
             <li className="mb-5"><Link href="#" className="text-white">Dapur</Link></li>
           </ul>
         </div>
-        <div className="">
+        <div className="col-span-2">
           <h4 className="text-white font-semibold mb-5">Kontak</h4>
           <ul>
             <li className="mb-5 text-white">Jalan Raya Jatibarang, Dukuhmaja, Songgom, Brebes, Jawa Tengah</li>

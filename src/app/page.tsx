@@ -1,95 +1,83 @@
 import React from "react";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheck, FaCheckCircle, FaCheckDouble, FaCheckSquare, FaHammer, FaMoneyBill, FaRegCheckCircle, FaShieldAlt, FaShippingFast } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Footer from "./component/Footer";
 import Navbar from "./component/Navbar";
+import Link from "next/link";
+import Image from "next/image";
+import { IoMdPricetag, IoMdPricetags } from "react-icons/io";
 
 function page() {
   return (
     <div className="w-full font-urbanist">
       <Navbar />
       {/* hero */}
-      <section className="w-full h-[1100px] bg-hero bg-cover bg-no-repeat bg-center">
-        <div className="bg-black/60 w-full h-full flex items-center justify-center flex-col">
-          <h1 className="text-white text-6xl max-w-2xl text-center leading-tight">
-            Rumah Idaman Dengan Perabotan Pilihan
-          </h1>
-          <h4 className="text-xl text-white max-w-3xl text-center mt-8">
-            Mebel berkualitas tinggi yang memadukan keindahan alami dengan
-            desain elegan, memberikan nuansa hangat dan estetik untuk setiap
-            ruang.
-          </h4>
-          <button className="bg-white/40 rounded-lg px-12 py-4 text-white text-xl mt-8 hover:bg-white/50">
-            Jelajahi
-          </button>
+      <section className="w-full bg-primary-green bg-cover bg-no-repeat bg-center">
+        <div className="max-w-screen-lg mx-auto px-6 md:px-4 py-20 h-[600px]">
+          <div className="flex h-full items-center">
+            <div className="w-5/12">
+              <h1 className="text-white text-5xl leading-tight font-semibold">Sentuhan Alami Gaya Elegan</h1>
+              <h4 className="text-base text-white mt-5 text-justify">
+                Mebel berkualitas tinggi yang memadukan keindahan alami dengan desain elegan, memberikan nuansa hangat dan estetik untuk setiap ruang.
+              </h4>
+              <div className="flex w-full">
+                <Link href={"/"} className="bg-yellow-400 text-slate-700 hover:bg-yellow-500 py-2 px-5 rounded-full font-medium mt-4 block w-fit me-4">Jelajahi</Link>
+                <Link href={"/"} className="bg-transparent text-white hover:bg-white hover:text-slate-700 py-2 px-5 rounded-full font-medium mt-4 block w-fit border-2 border-white">Katalog</Link>
+              </div>
+            </div>
+            <div className="w-7/12 relative h-full">
+              <Image src={"/assets/dot2.png"} height={500} width={500} alt="sofa" quality={100} className="absolute h-36 w-36 bottom-4 left-2"/>
+              <Image src={"/assets/dot1.png"} height={500} width={500} alt="sofa" quality={100} className="absolute h-56 w-56 top-4 -right-4"/>
+              <Image src={"/assets/sofa.png"} height={500} width={500} alt="sofa" quality={100} className="w-full absolute top-1/2 -translate-y-1/2 left-4 right-0 bottom-0"/>
+            </div>
+          </div>
         </div>
       </section>
       {/* end section */}
       {/* feature */}
       <section className="w-full bg-white mt-4">
-        <div className="max-w-screen-xl mx-auto p-4 py-20 flex  justify-center">
-          <div className="w-1/2 h-full flex mt-6">
-            <div className="bg-slate-200 h-[410px] w-6/12 mt-20 rounded-2xl"></div>
-            <div className="bg-slate-200 h-[410px] w-3/12 ms-8 rounded-2xl"></div>
+        <div className="max-w-screen-lg mx-auto px-6 md:px-4 py-20 flex flex-col lg:flex-row  justify-between gap-4 items-center h-[800px]">
+          <div className="w-6/12">
+            <h2 className="text-4xl font-bold text-slate-700">Kenapa Harus Kami</h2>
+            <h4 className="text-slate-400 mt-4 text-lg">
+            Kami menawarkan mebel kayu berkualitas tinggi dengan desain unik dan elegan. Dibuat dengan teliti dari bahan terbaik menjamin keindahan alami, daya tahan, dan kenyamanan maksimal.
+            </h4>
+            <div className="w-full grid grid-cols-2 gap-4 mt-10">
+              <div className="w-full flex flex-col">
+                <div className="w-12 h-12 bg-slate-300 rounded-full flex items-center justify-center">
+                  <FaShippingFast className="w-full text-slate-700"/>
+                </div>
+                <h4 className="text-slate-700 font-bold mt-2 text-lg">Cepat Dalam Pengiriman</h4>
+                <h4 className="text-slate-400 text-base mt-2">Pengiriman cepat dan tepat waktu,  Anda dapat menikmati produk pilihan Anda tanpa penundaan.</h4>
+              </div>
+              <div className="w-full flex flex-col">
+                <div className="w-12 h-12 bg-slate-300 rounded-full flex items-center justify-center">
+                  <FaMoneyBill className="w-full text-slate-700"/>
+                </div>
+                <h4 className="text-slate-700 font-bold mt-2 text-lg">Harga Terjangkau</h4>
+                <h4 className="text-slate-400 text-base mt-2">Produk berkualitas tinggi harga ramah di kantong, Mendapatkan nilai terbaik untuk setiap pembelian.</h4>
+              </div>
+              <div className="w-full flex flex-col mt-6">
+                <div className="w-12 h-12 bg-slate-300 rounded-full flex items-center justify-center">
+                  <FaCheck className="w-full text-slate-700"/>
+                </div>
+                <h4 className="text-slate-700 font-bold mt-2 text-lg">Kualitas Terjamin</h4>
+                <h4 className="text-slate-400 text-base mt-2">Bahan baku dan proses pembuatan yang teliti untuk memastikan produk tahan lama, kokoh, dan tampil menawan.</h4>
+              </div>
+              <div className="w-full flex flex-col mt-6">
+                <div className="w-12 h-12 bg-slate-300 rounded-full flex items-center justify-center">
+                  <FaShieldAlt className="w-full text-slate-700"/>
+                </div>
+                <h4 className="text-slate-700 font-bold mt-2 text-lg">Menyediakan Garansi</h4>
+                <h4 className="text-slate-400 text-base mt-2">Memberikan garansi pada setiap produk mebel kami, menjamin kualitas dan kepuasan bagi semua pelanggan.</h4>
+              </div>
+            </div>
           </div>
-          <div className="w-1/2 h-full flex flex-col justify-center ms-4">
-            <div className="w-full">
-              <h1 className="text-slate-800 text-[40px] font-bold">
-                Kenapa Harus Kami
-              </h1>
-              <h4 className="text-slate-400 text-xl text-justify">
-                Kami menawarkan mebel kayu berkualitas tinggi dengan desain unik
-                dan elegan. Dibuat dengan teliti dari bahan terbaik menjamin
-                keindahan alami, daya tahan, dan kenyamanan maksimal.
-              </h4>
-              <div className="flex mt-4">
-                <FaCheckCircle className="text-4xl me-4 -mt-1" />
-                <div className="grow">
-                  <h4 className="font-bold text-slate-800 text-xl">
-                    Kualitas Terjamin
-                  </h4>
-                  <h4 className="text-slate-400 text-xl text-justify">
-                    Bahan baku dan proses pembuatan yang teliti untuk memastikan
-                    produk tahan lama, kokoh, dan tampil menawan.
-                  </h4>
-                </div>
-              </div>
-              <div className="flex mt-4">
-                <FaCheckCircle className="text-4xl me-4 -mt-1" />
-                <div className="grow">
-                  <h4 className="font-bold text-slate-800 text-xl">
-                    Harga Terjangkau
-                  </h4>
-                  <h4 className="text-slate-400 text-xl text-justify">
-                    Produk berkualitas tinggi harga ramah di kantong,
-                    Mendapatkan nilai terbaik untuk setiap pembelian.
-                  </h4>
-                </div>
-              </div>
-              <div className="flex mt-4">
-                <FaCheckCircle className="text-4xl me-4 -mt-1" />
-                <div className="grow">
-                  <h4 className="font-bold text-slate-800 text-xl">
-                    Garansi Terpercaya
-                  </h4>
-                  <h4 className="text-slate-400 text-xl text-justify">
-                    Memberikan garansi pada setiap produk mebel kami, menjamin
-                    kualitas dan kepuasan bagi semua pelanggan.
-                  </h4>
-                </div>
-              </div>
-              <div className="flex mt-4">
-                <FaCheckCircle className="text-4xl me-4 -mt-1" />
-                <div className="grow">
-                  <h4 className="font-bold text-slate-800 text-xl">
-                    Pengiriman Tepat Waktu
-                  </h4>
-                  <h4 className="text-slate-400 text-xl text-justify">
-                    Pengiriman cepat, aman, dan tepat waktu, Anda dapat
-                    menikmati produk pilihan Anda tanpa penundaan.
-                  </h4>
-                </div>
-              </div>
+          <div className="w-5/12 relative h-full">
+            <Image src={"/assets/dot3.png"} height={500} width={500} alt="sofa" quality={100} className="absolute h-56 w-56 top-0"/>
+            <Image src={"/assets/dot4.png"} height={500} width={500} alt="sofa" quality={100} className="absolute h-56 w-56 bottom-0 right-0"/>
+            <div className="h-[498px] w-10/12 mx-auto bg-slate-400 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 rounded-xl overflow-hidden">
+              <Image src={"/assets/about.jpg"} alt="living room" height={500} width={500} className="object-cover w-full h-full"/>
             </div>
           </div>
         </div>
@@ -97,60 +85,67 @@ function page() {
       {/* end section */}
       {/* product */}
       <section className="w-full bg-white mt-4">
-        <div className="max-w-screen-xl mx-auto px-4 py-20 grid grid-cols-4 gap-6 h-[570px]">
+        <div className="max-w-screen-lg mx-auto px-4 py-20 grid grid-cols-4 gap-6 h-[500px]">
           <div className="h-full flex flex-col me-4 justify-between">
             <div className="w-full">
-              <h2 className="text-5xl font-bold text-slate-800 leading-tight">
+              <h2 className="text-4xl font-extrabold text-slate-700 leading-tight">
                 Apa Yang Sedang Kamu Cari?
               </h2>
               <h4 className="text-slate-400 mt-5 text-xl">
                 Dapatkan barang terbaru segera dengan harga promo
               </h4>
             </div>
-            <div className="flex items-center mb-6 cursor-pointer text-slate-600 hover:text-slate-800">
+            <div className="flex items-center mb-6 cursor-pointer text-slate-600 hover:text-slate-700">
               <h4 className="font-bold text-xl underline">Selengkapnya</h4>
               <FaArrowRightLong className="text-xl ms-2" />
             </div>
           </div>
           <div className="bg-slate-400 rounded-[4px] flex items-end justify-center">
-            <h3 className="text-3xl mb-5 font-bold text-white">Sofa</h3>
+            <h3 className="text-2xl mb-5 font-bold text-white">Sofa</h3>
           </div>
           <div className="bg-slate-400 rounded-[4px] flex items-end justify-center">
-            <h3 className="text-3xl mb-5 font-bold text-white">Meja</h3>
+            <h3 className="text-2xl mb-5 font-bold text-white">Meja</h3>
           </div>
           <div className="bg-slate-400 rounded-[4px] flex items-end justify-center">
-            <h3 className="text-3xl mb-5 font-bold text-white">Lemari</h3>
+            <h3 className="text-2xl mb-5 font-bold text-white">Lemari</h3>
           </div>
         </div>
       </section>
       {/* end section */}
       {/* gallery */}
       <section className="w-full bg-white mt-4">
-        <div className="max-w-screen-xl mx-auto px-4 py-20">
-          <h2 className="text-5xl font-bold text-center text-slate-800">
+        <div className="max-w-screen-lg mx-auto px-4 py-20">
+          <h2 className="text-4xl font-extrabold text-center text-slate-700">
             Galeri Kami
           </h2>
-          <h4 className="text-slate-400 text-xl text-center mt-3">
+          <h4 className="text-slate-400 text-lg text-center mt-3">
             Beberapa referensi yang bisa kamu lihat untuk mempercantik setiap
             sudut rumahmu
           </h4>
           <div className="grid grid-cols-3 gap-9 mt-12">
             <div className="grid grid-rows-3 gap-9 mt-9">
-              <div className="h-[500px] bg-slate-200 rounded-tl-[66px]"></div>
-              <div className="h-[500px] bg-slate-200 rounded-tl-[66px]"></div>
-              <div className="h-[500px] bg-slate-200 rounded-tl-[66px]"></div>
+              <div className="h-[400px] bg-slate-200 rounded-tl-[66px]"></div>
+              <div className="h-[400px] bg-slate-200 rounded-tl-[66px]"></div>
+              <div className="h-[400px] bg-slate-200 rounded-tl-[66px]"></div>
             </div>
             <div className="grid grid-rows-3">
-              <div className="h-[500px] bg-slate-200"></div>
-              <div className="h-[500px] bg-slate-200"></div>
-              <div className="h-[500px] bg-slate-200"></div>
+              <div className="h-[400px] bg-slate-200"></div>
+              <div className="h-[400px] bg-slate-200"></div>
+              <div className="h-[400px] bg-slate-200"></div>
             </div>
             <div className="grid grid-rows-3 gap-9 mt-9">
-              <div className="h-[500px] bg-slate-200 rounded-br-[66px]"></div>
-              <div className="h-[500px] bg-slate-200 rounded-br-[66px]"></div>
-              <div className="h-[500px] bg-slate-200 rounded-br-[66px]"></div>
+              <div className="h-[400px] bg-slate-200 rounded-br-[66px]"></div>
+              <div className="h-[400px] bg-slate-200 rounded-br-[66px]"></div>
+              <div className="h-[400px] bg-slate-200 rounded-br-[66px]"></div>
             </div>
           </div>
+        </div>
+      </section>
+      {/* end section */}
+      {/* maps */}
+      <section className="w-full bg-primary-green mt-4">
+        <div className="max-w-screen-lg mx-auto px-4 py-20 h-[500px] overflow-hidden">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1980.1804652108451!2d109.0453554!3d-6.9666785!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fbc627b19d213%3A0xb609be60caf06ec8!2sJp%20Jati%20Unggul%20Meubel!5e0!3m2!1sen!2sid!4v1723366950714!5m2!1sen!2sid" width="600" height="450" className="w-full h-full rounded-xl" allowFullScreen={true}  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </section>
       {/* end section */}
