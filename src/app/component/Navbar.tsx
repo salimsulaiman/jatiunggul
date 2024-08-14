@@ -32,7 +32,7 @@ function Navbar() {
       } fixed right-0 left-0 z-50`}
     >
       <div
-        className={`max-w-screen-lg mx-auto px-6 py-4 md:px-4 text-white flex justify-between items-center flex-wrap`}
+        className={`max-w-screen-lg mx-auto px-6 md:px-8 lg:px-6 py-4  text-white flex justify-between items-center flex-wrap`}
       >
         <Image
           className="h-10 w-auto"

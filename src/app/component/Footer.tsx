@@ -5,8 +5,8 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 function Footer() {
   return (
-    <div className="w-full bg-primary-dark px-4 py-14">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-6 gap-7 h-full">
+    <div className="w-full bg-primary-dark px-6 md:px-8 lg:px-6 py-14">
+      <div className="max-w-screen-lg mx-auto grid grid-cols-6 gap-7 h-full">
         <div className="col-span-2 me-5">
           <Image
             className="h-12 w-auto"
