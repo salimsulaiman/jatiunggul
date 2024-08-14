@@ -44,19 +44,19 @@ function Navbar() {
         />
         <ul className="hidden md:flex items-center justify-center">
           <li>
-            <Link href={"/#"} className="text-slate-200 hover:text-white ms-7">
+            <Link href={"#home"} className="text-slate-200 hover:text-white ms-7">
               Beranda
             </Link>
-            <Link href={"/#"} className="text-slate-200 hover:text-white ms-7">
+            <Link href={"#about"} className="text-slate-200 hover:text-white ms-7">
               Tentang Kami
             </Link>
-            <Link href={"/#"} className="text-slate-200 hover:text-white ms-7">
+            <Link href={"#product"} className="text-slate-200 hover:text-white ms-7">
               Produk
             </Link>
-            <Link href={"/#"} className="text-slate-200 hover:text-white ms-7">
+            <Link href={"#gallery"} className="text-slate-200 hover:text-white ms-7">
               Galeri
             </Link>
-            <Link href={"/#"} className="text-slate-200 hover:text-white ms-7">
+            <Link href={"#contact"} className="text-slate-200 hover:text-white ms-7">
               Kontak
             </Link>
           </li>
