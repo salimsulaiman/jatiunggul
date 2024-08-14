@@ -26,9 +26,9 @@ function page() {
               </div>
             </div>
             <div className="w-full lg:w-7/12 relative h-full">
-              <Image src={"/assets/dot2.png"} height={500} width={500} alt="sofa" quality={100} className="absolute w-28 h-28 lg:h-36 lg:w-36 bottom-4 left-2"/>
-              <Image src={"/assets/dot1.png"} height={500} width={500} alt="sofa" quality={100} className="absolute w-28 h-28 lg:h-56 lg:w-56 top-4 -right-4"/>
-              <Image src={"/assets/sofa.png"} height={500} width={500} alt="sofa" quality={100} className="w-full mt-12 lg:mt-0 relative lg:absolute top-auto lg:top-1/2 -translate-y-0 lg:-translate-y-1/2 left-4 right-0 bottom-0"/>
+              <Image src={"/assets/dot2.png"} loading="lazy" height={500} width={500} alt="sofa" quality={100} className="absolute w-28 h-28 lg:h-36 lg:w-36 bottom-4 left-2"/>
+              <Image src={"/assets/dot1.png"} loading="lazy" height={500} width={500} alt="sofa" quality={100} className="absolute w-28 h-28 lg:h-56 lg:w-56 top-4 -right-4"/>
+              <Image src={"/assets/sofa.png"} loading="lazy" height={500} width={500} alt="sofa" quality={100} className="w-full mt-12 lg:mt-0 relative lg:absolute top-auto lg:top-1/2 -translate-y-0 lg:-translate-y-1/2 left-4 right-0 bottom-0"/>
             </div>
           </div>
         </div>
@@ -74,8 +74,8 @@ function page() {
             </div>
           </div>
           <div className="w-full lg:w-5/12 relative h-[200px] lg:h-[500px] mb-9 lg:mb-0">
-            <Image src={"/assets/dot3.png"} height={500} width={500} alt="sofa" quality={100} className="absolute h-56 w-56 top-0 -left-5 lg:-left-0"/>
-            <Image src={"/assets/dot4.png"} height={500} width={500} alt="sofa" quality={100} className="absolute h-56 w-56 bottom-0 -right-5 lg:-right-0"/>
+            <Image src={"/assets/dot3.png"} height={500} loading="lazy" width={500} alt="sofa" quality={100} className="absolute h-56 w-56 top-0 -left-5 lg:-left-0"/>
+            <Image src={"/assets/dot4.png"} height={500} loading="lazy" width={500} alt="sofa" quality={100} className="absolute h-56 w-56 bottom-0 -right-5 lg:-right-0"/>
             <div className="h-[190px] lg:h-[498px] w-full lg:w-10/12 mx-auto bg-slate-400 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 rounded-xl overflow-hidden">
               <Image src={"/assets/about.jpg"} alt="living room" height={1000} width={1000} quality={100} className="object-cover w-full h-full"/>
             </div>
@@ -101,19 +101,19 @@ function page() {
             </div>
           </div>
           <div className="bg-slate-400 rounded-[4px] flex items-end justify-center relative overflow-hidden group">
-            <Image src={"/assets/product/sofa.jpg"} alt="meja makan" height={500} width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>
+            <Image src={"/assets/product/sofa.jpg"} alt="meja makan" height={500} loading="lazy" width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>
             <div className="absolute left-0 right-0 top-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent flex items-end justify-center translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 rounded-t-sm">
               <h3 className="text-2xl font-bold mb-5 text-white">Sofa</h3>
             </div>
           </div>
           <div className="bg-slate-400 rounded-[4px] flex items-end justify-center relative overflow-hidden group">
-            <Image src={"/assets/product/mejamakan.jpg"} alt="meja makan" height={500} width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>
+            <Image src={"/assets/product/mejamakan.jpg"} alt="meja makan" height={500} loading="lazy" width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>
             <div className="absolute left-0 right-0 top-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent flex items-end justify-center translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 rounded-t-sm">
               <h3 className="text-2xl font-bold mb-5 text-white">Meja</h3>
             </div>
           </div>
           <div className="bg-slate-400 rounded-[4px] flex items-end justify-center relative overflow-hidden group">
-            <Image src={"/assets/product/lemari.jpg"} alt="meja makan" height={500} width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>
+            <Image src={"/assets/product/lemari.jpg"} alt="meja makan" height={500} loading="lazy" width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>
             <div className="absolute left-0 right-0 top-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent flex items-end justify-center translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 rounded-t-sm">
               <h3 className="text-2xl font-bold mb-5 text-white">Lemari</h3>
             </div>
@@ -134,33 +134,33 @@ function page() {
           <div className="grid grid-cols-3 gap-9 mt-12">
             <div className="grid grid-rows-3 gap-9 mt-9">
               <div className="h-[400px] bg-slate-200 overflow-hidden rounded-tl-[66px] group">
-                <Image src={"/assets/gallery/image1.jpg"} alt="meja makan" height={500} width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>
+                <Image src={"/assets/gallery/image1.jpg"} alt="meja makan" height={500} loading="lazy" width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>
               </div>
               <div className="h-[400px] bg-slate-200 overflow-hidden rounded-tl-[66px] group">
-                <Image src={"/assets/gallery/image4.jpg"} alt="meja makan" height={500} width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/></div>
+                <Image src={"/assets/gallery/image4.jpg"} alt="meja makan" height={500} loading="lazy" width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/></div>
               <div className="h-[400px] bg-slate-200 overflow-hidden rounded-tl-[66px] group">
-                <Image src={"/assets/gallery/image7.jpg"} alt="meja makan" height={500} width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/></div>
+                <Image src={"/assets/gallery/image7.jpg"} alt="meja makan" height={500} loading="lazy" width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/></div>
             </div>
             <div className="grid grid-rows-3">
               <div className="h-[400px] bg-slate-200 overflow-hidden group">
-                <Image src={"/assets/gallery/image2.jpg"} alt="meja makan" height={500} width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>  
+                <Image src={"/assets/gallery/image2.jpg"} alt="meja makan" height={500} loading="lazy" width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>  
               </div>
               <div className="h-[400px] bg-slate-200 overflow-hidden group">
-                <Image src={"/assets/gallery/image5.jpg"} alt="meja makan" height={500} width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>  
+                <Image src={"/assets/gallery/image5.jpg"} alt="meja makan" height={500} loading="lazy" width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>  
               </div>
               <div className="h-[400px] bg-slate-200 overflow-hidden group">
-                <Image src={"/assets/gallery/image8.jpg"} alt="meja makan" height={500} width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>  
+                <Image src={"/assets/gallery/image8.jpg"} alt="meja makan" height={500} loading="lazy" width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>  
               </div>
             </div>
             <div className="grid grid-rows-3 gap-9 mt-9">
               <div className="h-[400px] bg-slate-200 overflow-hidden group rounded-br-[66px]">
-                  <Image src={"/assets/gallery/image3.jpg"} alt="meja makan" height={500} width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>  
+                  <Image src={"/assets/gallery/image3.jpg"} alt="meja makan" height={500} loading="lazy" width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>  
               </div>
               <div className="h-[400px] bg-slate-200 overflow-hidden group rounded-br-[66px]">
-                  <Image src={"/assets/gallery/image6.jpg"} alt="meja makan" height={500} width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>  
+                  <Image src={"/assets/gallery/image6.jpg"} alt="meja makan" height={500} loading="lazy" width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>  
               </div>
               <div className="h-[400px] bg-slate-200 overflow-hidden group rounded-br-[66px]">
-                  <Image src={"/assets/gallery/image9.jpg"} alt="meja makan" height={500} width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>  
+                  <Image src={"/assets/gallery/image9.jpg"} alt="meja makan" height={500} loading="lazy" width={500} quality={80} className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all ease-in-out duration-500"/>  
               </div>
             </div>
           </div>
