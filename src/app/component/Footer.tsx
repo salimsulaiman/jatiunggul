@@ -5,11 +5,11 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 function Footer() {
   return (
-    <div className="w-full bg-primary-dark px-6 md:px-8 lg:px-6 py-14">
+    <div className="w-full bg-primary-dark px-6 md:px-12 lg:px-6 py-14">
       <div className="max-w-screen-lg mx-auto grid grid-cols-6 gap-7 h-full">
-        <div className="col-span-2 me-5">
+        <div className="col-span-6 md:col-span-2 me-5">
           <Image
-            className="h-12 w-auto"
+            className="h-12 w-auto block mx-auto md:mx-0"
             src={"/logo-jatiunggul.png"}
             width={500}
             height={500}
@@ -17,22 +17,22 @@ function Footer() {
             alt="logo"
           />
           <h4 className="text-white mt-5">Sentuhan alami gaya elegan di setiap sudut ruangan, untuk menciptakan suasana yang nyaman dan memukau bagi Anda.</h4>
-          <div className="flex mt-5">
-            <div className="h-7 w-7 rounded-full bg-white me-4 flex items-center justify-center">
+          <div className="flex mt-5 justify-center md:justify-start">
+            <div className="h-10 w-10 md:h-7 md:w-7 rounded-full bg-white me-4 flex items-center justify-center">
               <FaFacebookF/>
             </div>
-            <div className="h-7 w-7 rounded-full bg-white me-4 flex items-center justify-center">
+            <div className="h-10 w-10 md:h-7 md:w-7 rounded-full bg-white me-4 flex items-center justify-center">
               <FaTwitter/>
             </div>
-            <div className="h-7 w-7 rounded-full bg-white me-4 flex items-center justify-center">
+            <div className="h-10 w-10 md:h-7 md:w-7 rounded-full bg-white me-4 flex items-center justify-center">
               <FaInstagram/>
             </div>
-            <div className="h-7 w-7 rounded-full bg-white me-4 flex items-center justify-center">
+            <div className="h-10 w-10 md:h-7 md:w-7 rounded-full bg-white me-4 flex items-center justify-center">
               <FaYoutube/>
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="col-span-2 md:col-span-1">
           <h4 className="text-white font-semibold mb-5">Halaman</h4>
           <ul>
             <li className="mb-5"><Link href="#" className="text-white">Beranda</Link></li>
@@ -42,7 +42,7 @@ function Footer() {
             <li className="mb-5"><Link href="#" className="text-white">Kontak</Link></li>
           </ul>
         </div>
-        <div className="">
+        <div className="col-span-2 md:col-span-1">
           <h4 className="text-white font-semibold mb-5">Layanan</h4>
           <ul>
             <li className="mb-5"><Link href="#" className="text-white">Ruang Tamu</Link></li>
@@ -52,7 +52,7 @@ function Footer() {
             <li className="mb-5"><Link href="#" className="text-white">Dapur</Link></li>
           </ul>
         </div>
-        <div className="col-span-2">
+        <div className="col-span-2 md:col-span-1">
           <h4 className="text-white font-semibold mb-5">Kontak</h4>
           <ul>
             <li className="mb-5 text-white">Jalan Raya Jatibarang, Dukuhmaja, Songgom, Brebes, Jawa Tengah</li>
