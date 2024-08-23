@@ -32,13 +32,13 @@ function Navbar() {
       } fixed right-0 left-0 z-50`}
     >
       <div
-        className={`max-w-screen-lg mx-auto px-6 md:px-12 lg:px-6 py-4  text-white flex justify-between items-center flex-wrap`}
+        className={`max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-4  text-white flex justify-between items-center flex-wrap`}
       >
         <Image
           className="h-10 w-auto"
           src={"/logo-jatiunggul.png"}
-          width={500}
-          height={500}
+          width={1000}
+          height={1000}
           quality={100}
           alt="logo"
         />
