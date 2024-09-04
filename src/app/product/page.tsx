@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaSearch, FaShieldAlt } from "react-icons/fa";
 
-function page() {
+function Product() {
   const [isFocused, setIsFocused] = useState(false);
   return (
     <div className="w-full font-urbanist" id="home">
@@ -49,4 +49,4 @@ function page() {
   );
 }
 
-export default page;
+export default Product;

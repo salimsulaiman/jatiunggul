@@ -3,7 +3,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
-function page() {
+function Contact() {
   return (
     <div className="w-full font-urbanist" id="home">
       {/* product */}
@@ -121,4 +121,4 @@ function page() {
   );
 }
 
-export default page;
+export default Contact;
