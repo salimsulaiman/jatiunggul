@@ -1,11 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 function Navbar() {
   const [scrolling, setScrolling] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const pathname = usePathname();
+  console.log(pathname);
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -28,35 +32,55 @@ function Navbar() {
   return (
     <nav
       className={`border-gray-200 transition-all duration-300 ${
-        scrolling ? "bg-primary-dark shadow" : "bg-primary-dark md:bg-transparent"
+        scrolling
+          ? "bg-primary-dark shadow"
+          : `bg-primary-dark ${
+              pathname === "/" ? "md:bg-transparent" : "md:bg-primary-dark"
+            }`
       } fixed right-0 left-0 z-50`}
     >
       <div
-        className={`max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-4  text-white flex justify-between items-center flex-wrap`}
+        className={`max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 transition-all ease-in-out duration-500 ${
+          scrolling ? "py-4 md:py-8" : "py-4"
+        }  text-white flex justify-between items-center flex-wrap`}
       >
-        <Image
-          className="h-10 w-auto"
-          src={"/logo-jatiunggul.png"}
-          width={1000}
-          height={1000}
-          quality={100}
-          alt="logo"
-        />
+        <Link href={"/"}>
+          <Image
+            className="h-10 w-auto"
+            src={"/logo-jatiunggul.png"}
+            width={1000}
+            height={1000}
+            quality={100}
+            alt="logo"
+          />
+        </Link>
         <ul className="hidden md:flex items-center justify-center">
           <li>
-            <Link href={"#home"} className="text-slate-200 hover:text-white ms-7">
+            <Link href={"/"} className="text-slate-200 hover:text-white ms-7">
               Beranda
             </Link>
-            <Link href={"#about"} className="text-slate-200 hover:text-white ms-7">
+            <Link
+              href={"/about"}
+              className="text-slate-200 hover:text-white ms-7"
+            >
               Tentang Kami
             </Link>
-            <Link href={"#product"} className="text-slate-200 hover:text-white ms-7">
+            <Link
+              href={"/product"}
+              className="text-slate-200 hover:text-white ms-7"
+            >
               Produk
             </Link>
-            <Link href={"#gallery"} className="text-slate-200 hover:text-white ms-7">
+            <Link
+              href={"/gallery"}
+              className="text-slate-200 hover:text-white ms-7"
+            >
               Galeri
             </Link>
-            <Link href={"#contact"} className="text-slate-200 hover:text-white ms-7">
+            <Link
+              href={"/contact"}
+              className="text-slate-200 hover:text-white ms-7"
+            >
               Kontak
             </Link>
           </li>
@@ -83,7 +107,9 @@ function Navbar() {
             />
           </svg>
         </button>
-        <div className={`w-full ${isExpanded ? "block" : "hidden"} md:hidden`}>
+        <div
+          className={`w-full ${isExpanded ? "block" : "hidden"} md:hidden py-4`}
+        >
           <ul className="flex flex-col font-medium mt-4 rounded-lg bg-slate-700  dark:border-gray-700">
             <li>
               <Link
