@@ -18,7 +18,7 @@ function page() {
             <div className="flex h-full items-center w-full flex-col lg:flex-row mt-12 lg:mt-0">
               <div className="w-full lg:w-5/12">
                 <h1 className="text-white text-3xl sm:text-5xl leading-tight font-semibold">Sentuhan Alami Gaya Elegan</h1>
-                <h4 className="text-base text-white mt-5 text-justify">
+                <h4 className="text-lg text-white mt-5 text-justify">
                   Mebel berkualitas tinggi yang memadukan keindahan alami dengan desain elegan, memberikan nuansa hangat dan estetik untuk setiap ruang.
                 </h4>
                 <div className="flex w-full">
@@ -89,6 +89,36 @@ function page() {
       </section>
       {/* end section */}
       {/* product */}
+      <section className="w-full bg-white">
+        <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 flex flex-col lg:flex-row justify-between items-center gap-8">
+          <div className="min-h-[259px] bg-slate-300 w-full lg:w-1/2 rounded-md flex flex-col sm:flex-row gap-4 p-11">
+              <div className="w-full sm:w-1/2 flex flex-col justify-between">
+                <div className="w-full">
+                  <h2 className="text-2xl text-slate-600 font-bold mb-3 text-center sm:text-start">Moderen</h2>
+                  <h4 className="text-lg text-slate-500">Menciptakan suasana rumah yang minimalis dan bersih di rumah Anda.</h4>
+                </div>
+                <Link href={"/"} className="text-white bg-slate-800 hover:bg-slate-900 px-6 py-[10px] rounded-full w-fit hidden sm:block">Lihat Sekarang</Link>
+              </div>
+              <div className="w-full sm:w-1/2">
+                <Image src={"/assets/product/modern.png"} width={500} height={500} alt="modern" className="h-[259px] w-auto mx-auto"/>
+              </div>
+              <Link href={"/"} className="text-white bg-slate-800 hover:bg-slate-900 px-6 py-[10px] rounded-full w-full text-center block sm:hidden mt-5">Lihat Sekarang</Link>
+          </div>
+          <div className="min-h-[259px] bg-slate-200 w-full lg:w-1/2 rounded-md flex flex-col sm:flex-row gap-4 p-11">
+              <div className="w-full sm:w-1/2 flex flex-col justify-between">
+                <div className="w-full">
+                  <h2 className="text-2xl text-slate-600 font-bold mb-3 text-center sm:text-start">Klasik</h2>
+                  <h4 className="text-lg text-slate-500">menghadirkan keanggunan dan keindahan ke dalam setiap ruang di rumah Anda.</h4>
+                </div>
+                <Link href={"/"} className="text-white bg-slate-800 hover:bg-slate-900 px-6 py-[10px] rounded-full w-fit hidden sm:block">Lihat Sekarang</Link>
+              </div>
+              <div className="w-full sm:w-1/2">
+                <Image src={"/assets/product/clasic.png"} width={500} height={500} alt="modern" className="h-[259px] w-auto mx-auto"/>
+              </div>
+              <Link href={"/"} className="text-white bg-slate-800 hover:bg-slate-900 px-6 py-[10px] rounded-full w-full text-center block sm:hidden mt-5">Lihat Sekarang</Link>
+          </div>
+        </div>
+      </section>
       <section className="w-full bg-slate-100 mt-4" id="product">
         <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 grid grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             <div className="block md:hidden w-full col-span-3 text-center">
@@ -183,11 +213,11 @@ function page() {
       </section>
       {/* end section */}
       {/* maps */}
-      <section className="w-full bg-primary-green mt-4" id="contact">
+      {/* <section className="w-full bg-primary-green mt-4" id="contact">
         <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 h-[350px] md:h-[450px] lg:h-[500px] overflow-hidden">
           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1980.1804652108451!2d109.0453554!3d-6.9666785!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fbc627b19d213%3A0xb609be60caf06ec8!2sJp%20Jati%20Unggul%20Meubel!5e0!3m2!1sen!2sid!4v1723366950714!5m2!1sen!2sid" width="600" height="450" className="w-full h-full rounded-xl" allowFullScreen={true}  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
-      </section>
+      </section> */}
       {/* end section */}
       <Footer />
     </div>
