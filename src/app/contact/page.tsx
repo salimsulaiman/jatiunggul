@@ -25,7 +25,7 @@ function Contact() {
       {/* product */}
       <section className="w-full bg-white mt-4" id="about">
         <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 flex flex-col lg:flex-row gap-10 items-center">
-          <div className="w-1/2">
+          <div className="w-full lg:w-1/2">
             <h1 className="text-4xl text-slate-700 font-bold">
               Hubungi Kami Segera
             </h1>
@@ -57,7 +57,7 @@ function Contact() {
             <h3 className="text-lg text-slate-700 font-bold mt-14">
               Sosial Media
             </h3>
-            <div className="w-full flex flex-row gap-7">
+            <div className="w-full flex flex-col sm:flex-row gap-0 sm:gap-7">
               <div className="flex gap-3 items-center mt-4">
                 <FaLocationDot className="text-[25px] text-slate-700" />
                 <h4 className="text-base text-slate-500">Jati Unggul</h4>
@@ -72,7 +72,7 @@ function Contact() {
               </div>
             </div>
           </div>
-          <div className="w-1/2 bg-white-lilac-50 p-7">
+          <div className="w-full lg:w-1/2 bg-white-lilac-50 p-7">
             <h2 className="text-slate-700 font-bold text-xl">Kirimkan Pesan</h2>
             <form action="" className="w-full">
               <input
