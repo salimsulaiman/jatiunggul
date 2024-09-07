@@ -22,17 +22,19 @@ const config: Config = {
         "seashell-100": "#F1F1F1",
         "seashell-200": "#DCDCDC",
         "heather-300": "#b2bac5",
+        "aluminium-500": "#a8a8af",
+        "athens-gray-100": "#ebecee",
+        "jumbo-700": "#82828B",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         hero: "url('/assets/background.jpg')",
         product: "url('/assets/background-product.jpg')",
         info: "url('/assets/background-info.jpg')",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };
 export default config;
