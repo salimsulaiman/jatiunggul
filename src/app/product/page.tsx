@@ -15,7 +15,7 @@ function Product() {
         <div className="w-full h-full bg-black/70">
           <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-20 pb-10 h-fit lg:h-[500px] flex flex-col items-center justify-center">
             <h1 className="text-5xl text-white font-bold">Produk Kami</h1>
-            <h3 className="text-xl text-white text-center max-w-[883px] mt-8">
+            <h3 className="text-xl text-white text-center max-w-[883px] mt-8 leading-loose">
               Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
               Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
               tellus..
@@ -301,7 +301,7 @@ function Product() {
           </div>
           <div className="w-full relative h-[219px] rounded-tr-[50px] rounded-bl-[50px] bg-info bg-center bg-cover overflow-hidden mt-24">
             <div className="w-full h-full bg-black/50 flex justify-center items-center">
-              <h4 className="text-white text-xl text-center max-w-[770px]">
+              <h4 className="text-white text-xl text-center max-w-[770px] leading-loose">
                 Jika kamu ingin melakukan <span className="font-bold italic">custom desain furniture</span> , jangan
                 ragu untuk menghubungi kami. Kami siap membantu mewujudkannya sesuai dengan keinginan dan kebutuhanmu.
               </h4>

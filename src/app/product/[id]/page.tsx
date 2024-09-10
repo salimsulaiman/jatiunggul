@@ -71,7 +71,7 @@ function ProductDetail() {
               <text className="text-slate-500 text-2xl font-bold">Rp500.000,00</text>
             </div> */}
             <div className="w-full">
-              <h4 className="text-jumbo-700 mt-6">
+              <h4 className="text-jumbo-700 mt-6 leading-loose">
                 Lemari mungil dengan desain minimalis berwarna cokelat, cocok untuk menyimpan barang-barang kecil sambil
                 mempercantik ruangan.
               </h4>

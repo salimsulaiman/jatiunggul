@@ -8,15 +8,14 @@ function Contact() {
     <div className="w-full font-urbanist" id="home">
       {/* product */}
       {/* hero */}
-      <section className="w-full bg-hero bg-cover bg-no-repeat bg-center">
+      <section className="w-full bg-contact bg-cover bg-no-repeat bg-center">
         <div className="w-full h-full bg-black/70">
           <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-20 pb-10 h-fit lg:h-[500px] flex flex-col items-center justify-center">
             <h1 className="text-5xl text-white font-bold">Kontak Kami</h1>
-            <h3 className="text-xl text-white text-center max-w-[883px] mt-8">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-              mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-              fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
-              vitae mattis tellus..
+            <h3 className="text-xl text-white text-center max-w-[883px] mt-8 leading-loose">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
+              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
+              tellus..
             </h3>
           </div>
         </div>
@@ -26,14 +25,11 @@ function Contact() {
       <section className="w-full bg-white mt-4" id="about">
         <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 flex flex-col lg:flex-row gap-10 items-center">
           <div className="w-full lg:w-1/2">
-            <h1 className="text-4xl text-slate-700 font-bold">
-              Hubungi Kami Segera
-            </h1>
-            <h4 className="text-slate-500 mt-4">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-              mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-              fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
-              vitae mattis tellus..
+            <h1 className="text-4xl text-slate-700 font-bold">Hubungi Kami Segera</h1>
+            <h4 className="text-slate-500 mt-4 leading-loose">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
+              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
+              tellus..
             </h4>
             <h3 className="text-lg text-slate-700 font-bold mt-14">Kontak</h3>
             <div className="w-full flex-col">
@@ -45,18 +41,14 @@ function Contact() {
               </div>
               <div className="w-full flex gap-3 items-center mt-4">
                 <MdEmail className="text-[25px] text-slate-700" />
-                <h4 className="text-base text-slate-500">
-                  contact@jatiunggul.com
-                </h4>
+                <h4 className="text-base text-slate-500">contact@jatiunggul.com</h4>
               </div>
               <div className="w-full flex gap-3 items-center mt-4">
                 <FaPhoneAlt className="text-[25px] text-slate-700" />
                 <h4 className="text-base text-slate-500">+62 877 7642 1079</h4>
               </div>
             </div>
-            <h3 className="text-lg text-slate-700 font-bold mt-14">
-              Sosial Media
-            </h3>
+            <h3 className="text-lg text-slate-700 font-bold mt-14">Sosial Media</h3>
             <div className="w-full flex flex-col sm:flex-row gap-0 sm:gap-7">
               <div className="flex gap-3 items-center mt-4">
                 <FaLocationDot className="text-[25px] text-slate-700" />
@@ -97,9 +89,7 @@ function Contact() {
                 placeholder="Pesan"
               />
               <div className="w-full flex justify-end mt-4">
-                <button className="bg-slate-700 text-white rounded-lg px-[39px] py-[12px]">
-                  Kirim
-                </button>
+                <button className="bg-slate-700 text-white rounded-lg px-[39px] py-[12px]">Kirim</button>
               </div>
             </form>
           </div>

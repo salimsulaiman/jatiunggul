@@ -34,9 +34,7 @@ function Navbar() {
       className={`border-gray-200 transition-all duration-300 ${
         scrolling
           ? "bg-primary-dark shadow"
-          : `bg-primary-dark ${
-              pathname === "/" ? "md:bg-transparent" : "md:bg-primary-dark"
-            }`
+          : `bg-primary-dark ${pathname === "/" ? "md:bg-transparent" : "md:bg-primary-dark"}`
       } fixed right-0 left-0 z-50`}
     >
       <div
@@ -59,28 +57,16 @@ function Navbar() {
             <Link href={"/"} className="text-slate-200 hover:text-white ms-7">
               Beranda
             </Link>
-            <Link
-              href={"/about"}
-              className="text-slate-200 hover:text-white ms-7"
-            >
+            <Link href={"/about"} className="text-slate-200 hover:text-white ms-7">
               Tentang Kami
             </Link>
-            <Link
-              href={"/product"}
-              className="text-slate-200 hover:text-white ms-7"
-            >
+            <Link href={"/product"} className="text-slate-200 hover:text-white ms-7">
               Produk
             </Link>
-            <Link
-              href={"/gallery"}
-              className="text-slate-200 hover:text-white ms-7"
-            >
+            <Link href={"/gallery"} className="text-slate-200 hover:text-white ms-7">
               Galeri
             </Link>
-            <Link
-              href={"/contact"}
-              className="text-slate-200 hover:text-white ms-7"
-            >
+            <Link href={"/contact"} className="text-slate-200 hover:text-white ms-7">
               Kontak
             </Link>
           </li>
@@ -107,9 +93,7 @@ function Navbar() {
             />
           </svg>
         </button>
-        <div
-          className={`w-full ${isExpanded ? "block" : "hidden"} md:hidden py-4`}
-        >
+        <div className={`w-full ${isExpanded ? "block" : "hidden"} md:hidden py-4`}>
           <ul className="flex flex-col font-medium mt-4 rounded-lg bg-slate-700  dark:border-gray-700">
             <li>
               <Link

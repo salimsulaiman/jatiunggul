@@ -25,6 +25,8 @@ const config: Config = {
         "aluminium-500": "#a8a8af",
         "athens-gray-100": "#ebecee",
         "jumbo-700": "#82828B",
+        "outer-space-950": "#273035",
+        "boulder-500": "#75797b",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -32,6 +34,9 @@ const config: Config = {
         hero: "url('/assets/background.jpg')",
         product: "url('/assets/background-product.jpg')",
         info: "url('/assets/background-info.jpg')",
+        about: "url('/assets/background-about.jpg')",
+        quotes: "url('/assets/background-quotes.jpg')",
+        contact: "url('/assets/background-contact.jpg')",
       },
     },
   },
