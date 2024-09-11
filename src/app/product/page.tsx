@@ -299,7 +299,7 @@ function Product() {
               </Link>
             </div>
           </div>
-          <div className="w-full relative h-[219px] rounded-tr-[50px] rounded-bl-[50px] bg-info bg-center bg-cover overflow-hidden mt-24">
+          <div className="w-full relative h-[219px] rounded-tr-[50px] rounded-bl-[50px] bg-info bg-center bg-cover overflow-hidden mt-24 mb-6">
             <div className="w-full h-full bg-black/50 flex justify-center items-center">
               <h4 className="text-white text-xl text-center max-w-[770px] leading-loose">
                 Jika kamu ingin melakukan <span className="font-bold italic">custom desain furniture</span> , jangan

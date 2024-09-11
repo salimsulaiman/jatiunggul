@@ -45,7 +45,44 @@ function About() {
         </div>
       </div>
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-10 pb-10 flex gap-20 items-center">
-        <div className="w-full relative h-[262px] rounded-tr-[50px] rounded-bl-[50px] bg-quotes bg-center bg-cover overflow-hidden mt-24">
+        <div className="w-full grid grid-cols-3 gap-[44px]">
+          <div className="flex flex-col justify-between">
+            <div className="w-full">
+              <h1 className="text-[40px] text-outer-space-950 font-bold">Perusahaan Apakah Kami?</h1>
+              <h4 className="text-base text-boulder-500 leading-loose mt-4">
+                Perusahaan kami berfokus pada industri mebel, menghadirkan furnitur berkualitas tinggi dengan desain
+                inovatif yang mempercantik ruangan dan mencerminkan gaya hidup elegan Anda.
+              </h4>
+            </div>
+            <div className="w-full">
+              <h3 className="text-xl font-bold text-outer-space-950">PT Jati Unggul Perkasa</h3>
+              <h4 className="text-base text-boulder-500 leading-loose">Furniture Industry</h4>
+            </div>
+          </div>
+          <div className="h-auto p-4 bg-zinc-100 rounded-lg">
+            <div className="w-full h-[217px] bg-slate-300 rounded-t-lg overflow-hidden relative">
+              <div className="w-full bg-gradient-to-t from-zinc-100 to-transparent h-10 absolute bottom-0"></div>
+            </div>
+            <h3 className="text-xl font-bold text-outer-space-950 mt-2">Bahan Baku Pilihan</h3>
+            <h4 className="text-boulder-500 mt-2">
+              Kami hanya menggunakan bahan baku berkualitas tinggi yang dipilih secara selektif dalam setiap tahap
+              proses produksi.
+            </h4>
+          </div>
+          <div className="h-auto p-4 bg-zinc-100 rounded-lg">
+            <div className="w-full h-[217px] bg-slate-300 rounded-t-lg overflow-hidden relative">
+              <div className="w-full bg-gradient-to-t from-zinc-100 to-transparent h-10 absolute bottom-0"></div>
+            </div>
+            <h3 className="text-xl font-bold text-outer-space-950 mt-2">Kualitas Produk Terjaga </h3>
+            <h4 className="text-boulder-500 mt-2">
+              Kualitas produk kami selalu terjaga melalui pengawasan ketat dan proses kontrol mutu yang dilakukan di
+              setiap tahap produksi.
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 mb-28">
+        <div className="w-full relative h-[262px] rounded-tl-[50px] rounded-br-[50px] bg-quotes bg-center bg-cover overflow-hidden mt-24">
           <div className="w-full h-full bg-black/50 flex justify-center items-center">
             <h4 className="text-white text-xl text-center max-w-[770px] font-light italic leading-loose">
               <q>
