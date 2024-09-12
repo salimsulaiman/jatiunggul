@@ -25,7 +25,7 @@ function Contact() {
       <section className="w-full bg-white mt-4" id="about">
         <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 flex flex-col lg:flex-row gap-10 items-center">
           <div className="w-full lg:w-1/2">
-            <h1 className="text-4xl text-slate-700 font-bold">Hubungi Kami Segera</h1>
+            <h1 className="text-3xl md:text-4xl text-slate-700 font-bold">Hubungi Kami Segera</h1>
             <h4 className="text-slate-500 mt-4 leading-loose">
               Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
               Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis

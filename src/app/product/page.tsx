@@ -45,7 +45,7 @@ function Product() {
             </div>
           </div>
           <div className="w-full grid grid-cols-4 gap-5 mt-4">
-            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg">
+            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg col-span-4 md:col-span-2 lg:col-span-1 order-last">
               <div className="w-full flex flex-col items-end">
                 <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">Brown Chair</h2>
                 <h4 className="text-[15px] text-slate-500 text-start z-10">Kursi indah dan nyaman</h4>
@@ -64,7 +64,7 @@ function Product() {
                 className="w-[155px] h-auto absolute -bottom-6 left-7"
               />
             </div>
-            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] col-span-2 shadow-lg">
+            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] col-span-4 lg:col-span-2 shadow-lg">
               <div className="w-full flex gap-4 h-full items-center">
                 <div className="w-1/2 h-full">
                   <Image
@@ -91,9 +91,9 @@ function Product() {
                 </div>
               </div>
             </div>
-            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg">
+            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg col-span-4 md:col-span-2 lg:col-span-1">
               <div className="w-full flex flex-col items-start">
-                <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-end z-10">Small Cabinet</h2>
+                <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">Small Cabinet</h2>
                 <h4 className="text-[15px] text-slate-500 text-end z-10">Bentuk nyaman dan stylish</h4>
                 <Link
                   href={"/product/1"}
@@ -300,7 +300,7 @@ function Product() {
             </div>
           </div>
           <div className="w-full relative h-[219px] rounded-tr-[50px] rounded-bl-[50px] bg-info bg-center bg-cover overflow-hidden mt-24 mb-6">
-            <div className="w-full h-full bg-black/50 flex justify-center items-center">
+            <div className="w-full h-full bg-black/50 flex justify-center items-center p-8">
               <h4 className="text-white text-xl text-center max-w-[770px] leading-loose">
                 Jika kamu ingin melakukan <span className="font-bold italic">custom desain furniture</span> , jangan
                 ragu untuk menghubungi kami. Kami siap membantu mewujudkannya sesuai dengan keinginan dan kebutuhanmu.
