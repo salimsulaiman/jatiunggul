@@ -45,7 +45,7 @@ function Product() {
             </div>
           </div>
           <div className="w-full grid grid-cols-4 gap-5 mt-4">
-            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg col-span-4 md:col-span-2 lg:col-span-1 order-last">
+            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg col-span-4 md:col-span-2 lg:col-span-1 order-last lg:order-first">
               <div className="w-full flex flex-col items-end">
                 <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">Brown Chair</h2>
                 <h4 className="text-[15px] text-slate-500 text-start z-10">Kursi indah dan nyaman</h4>
@@ -121,7 +121,7 @@ function Product() {
               <FaArrowRight className="text-slate-700 text-lg ms-2" />
             </div>
           </div>
-          <div className="w-full grid grid-cols-4 gap-4">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="min-h-[400px] bg-white border-seashell-100 border-[1px] rounded-xl shadow-md hover:shadow-lg transition-all ease-in-out duration-500 p-5 flex flex-col justify-between">
               <div className="w-full">
                 <div className="w-full h-[215px] bg-seashell-200 rounded-xl overflow-hidden">
