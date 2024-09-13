@@ -76,10 +76,10 @@ function Product() {
                   />
                 </div>
                 <div className="w-1/2 flex flex-col items-start">
-                  <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">
+                  <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10 line-clamp-2 md:line-clamp-none">
                     Modern Arm Chair
                   </h2>
-                  <h4 className="text-[15px] text-slate-500 text-start z-10">
+                  <h4 className="text-[15px] text-slate-500 text-start z-10 line-clamp-2 md:line-clamp-none">
                     Kursi minimalis yang mengutamakan kenyamanan dan gaya kontemporer nan klasik
                   </h4>
                   <Link
@@ -94,7 +94,7 @@ function Product() {
             <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg col-span-4 md:col-span-2 lg:col-span-1">
               <div className="w-full flex flex-col items-start">
                 <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">Small Cabinet</h2>
-                <h4 className="text-[15px] text-slate-500 text-end z-10">Bentuk nyaman dan stylish</h4>
+                <h4 className="text-[15px] text-slate-500 text-start z-10">Bentuk nyaman dan stylish</h4>
                 <Link
                   href={"/product/1"}
                   className="py-[5px] px-4 bg-slate-600 hover:bg-slate-700 text-white text-[13px] rounded-[10px] mt-5 z-10"
