@@ -9,7 +9,6 @@ function Navbar() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const pathname = usePathname();
-  console.log(pathname);
 
   const handleScroll = () => {
     if (window.scrollY > 50) {

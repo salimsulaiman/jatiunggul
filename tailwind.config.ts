@@ -10,6 +10,9 @@ const config: Config = {
     fontFamily: {
       urbanist: ["Urbanist", "sans-serif"],
     },
+    daisyui: {
+      themes: ["light"],
+    },
     extend: {
       colors: {
         "primary-dark": "#273035",
@@ -40,6 +43,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwind-scrollbar")],
+  plugins: [require("tailwind-scrollbar"), require("daisyui")],
 };
 export default config;

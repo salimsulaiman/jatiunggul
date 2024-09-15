@@ -1,25 +1,128 @@
+"use client";
+import ProductCard from "@/app/component/ProductCard";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
-function ProductDetail() {
+function ProductDetail(props: { params: { id: string } }) {
+  const { params } = props;
+  const id = parseInt(params.id);
+  console.log(id);
+
+  const products = [
+    {
+      id: 1,
+      name: "Modern Arm Chair",
+      category: "Kursi",
+      price: 1600000,
+      picture: "modern-arm-chair.png",
+      desc: "Kursi lengan modern yang dirancang dengan bentuk yang ergonomis dan estetika kontemporer. Terbuat dari bahan berkualitas tinggi, kursi ini menawarkan kenyamanan maksimal dengan bantalan empuk yang mendukung postur tubuh dengan baik. Ideal untuk ruang tamu, ruang kerja, atau area lounge.",
+    },
+    {
+      id: 2,
+      name: "Brown Chair",
+      category: "Kursi",
+      price: 1600000,
+      picture: "brown-chair.png",
+      desc: "Kursi berwarna cokelat dengan desain klasik yang menggabungkan estetika tradisional dan kenyamanan modern. Dibalut dengan bahan yang tahan lama, kursi ini cocok untuk penggunaan sehari-hari dan dapat melengkapi berbagai gaya interior, dari minimalis hingga klasik.",
+    },
+    {
+      id: 3,
+      name: "Clasic Chair",
+      category: "Kursi",
+      price: 1600000,
+      picture: "clasic.png",
+      desc: "Kursi klasik dengan desain elegan yang menonjolkan sentuhan vintage namun tetap nyaman untuk digunakan. Terbuat dari bahan berkualitas tinggi dengan detail yang rapi, kursi ini cocok untuk ruang makan, ruang kerja, atau ruang tamu yang membutuhkan sentuhan klasik.",
+    },
+    {
+      id: 4,
+      name: "Modern Chair",
+      category: "Kursi",
+      price: 3800000,
+      picture: "modern.png",
+      desc: "Kursi modern dengan desain kontemporer yang dilengkapi dengan fitur penyesuaian untuk meningkatkan kenyamanan. Didesain dengan garis-garis bersih dan bahan premium, kursi ini sangat cocok untuk lingkungan kantor, ruang rapat, atau ruang tamu yang mengutamakan gaya dan fungsi.",
+    },
+    {
+      id: 5,
+      name: "Luxury Blue Sofa",
+      category: "Sofa",
+      price: 4000000,
+      picture: "luxury-blue-sofa.png",
+      desc: "Sofa mewah berwarna biru yang memberikan sentuhan elegan pada ruang tamu Anda. Terbuat dari bahan berkualitas tinggi dengan busa memori yang empuk, sofa ini menawarkan kenyamanan ekstra dan desain yang menawan. Ideal untuk bersantai atau sebagai pusat perhatian di ruang tamu modern.",
+    },
+    {
+      id: 6,
+      name: "Cabinet",
+      category: "Lemari",
+      price: 1700000,
+      picture: "cabinet.png",
+      desc: "Lemari serbaguna dengan desain yang sederhana namun fungsional. Memiliki ruang penyimpanan yang luas dengan rak yang dapat disesuaikan, lemari ini ideal untuk menyimpan berbagai barang dengan rapi. Cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja.",
+    },
+    {
+      id: 7,
+      name: "Black Chair",
+      category: "Kursi",
+      price: 1700000,
+      picture: "black-chair.png",
+      desc: "Kursi hitam yang menawarkan desain modern dan stylish dengan bahan berkualitas tinggi. Didesain untuk memberikan kenyamanan yang optimal dengan fitur yang mendukung postur tubuh, kursi ini cocok untuk berbagai ruang, termasuk kantor, ruang tamu, atau ruang kerja.",
+    },
+    {
+      id: 8,
+      name: "Kitchen Set",
+      category: "Lemari",
+      price: 1700000,
+      picture: "kitchen-set.png",
+      desc: "Set dapur lengkap yang dirancang untuk memenuhi kebutuhan memasak dan penyimpanan Anda. Dengan desain yang praktis dan fungsional, set dapur ini menyediakan berbagai ruang penyimpanan untuk peralatan memasak dan bahan makanan, menjadikannya pilihan ideal untuk dapur rumah.",
+    },
+    {
+      id: 9,
+      name: "Wooden Buffet",
+      category: "Buffet",
+      price: 1700000,
+      picture: "wooden-buffet.png",
+      desc: "Buffet kayu dengan desain tradisional yang menghadirkan kehangatan dan keindahan pada ruang makan Anda. Dikenal karena kekuatan dan daya tahannya, buffet ini menyediakan ruang penyimpanan yang luas untuk peralatan makan dan barang-barang lainnya, sambil menambahkan sentuhan estetika yang elegan.",
+    },
+    {
+      id: 10,
+      name: "Small Cabinet",
+      category: "Lemari",
+      price: 1700000,
+      picture: "small-cabinet.png",
+      desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
+    },
+  ];
+
+  const [product, setProduct] = useState<any>(null);
+
+  useEffect(() => {
+    const res = products.find((items) => items.id == id);
+    setProduct(res);
+  }, []);
+
   return (
     <div className="w-full font-urbanist" id="home">
-      <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-36 pb-10 flex justify-center gap-16">
-        <div className="w-1/2">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-36 pb-10 flex flex-col lg:flex-row justify-center gap-16">
+        <div className="w-full lg:w-1/2">
           <div className="w-full">
-            <div className="w-full h-[403px] rounded-[20px] bg-slate-100 overflow-hidden">
-              <Image
-                src={"/assets/product/small-cabinet.png"}
-                width={500}
-                height={500}
-                alt="small-cabinet"
-                quality={80}
-                className="w-full h-full object-cover object-center"
-              />
+            <div className="w-full h-[403px] rounded-[20px] bg-slate-100 overflow-hidden p-4">
+              {product?.picture ? (
+                <Image
+                  src={`/assets/product/${product.picture}`}
+                  width={500}
+                  height={500}
+                  alt="small-cabinet"
+                  quality={80}
+                  className="h-full w-auto mx-auto"
+                />
+              ) : (
+                <div className="h-full w-full flex items-center justify-center bg-gray-200">
+                  <p className="text-gray-600">No image available</p>
+                </div>
+              )}
             </div>
-            <div className="w-full overflow-x-auto whitespace-nowrap gap-[33px] space-x-8 mt-8 scroll-smooth scrollbar-thumb-slate-400 scrollbar-track-transparent scrollbar-thin">
+            {/* <div className="w-full overflow-x-auto whitespace-nowrap gap-[33px] space-x-8 mt-8 scroll-smooth scrollbar-thumb-slate-400 scrollbar-track-transparent scrollbar-thin">
               <div className="inline-block w-[160px] h-[160px] bg-slate-100 rounded-[20px] overflow-hidden">
                 <Image
                   src={"/assets/product/small-cabinet.png"}
@@ -60,21 +163,18 @@ function ProductDetail() {
                   className="w-full h-full object-cover object-center"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           <div className="w-full">
-            <h2 className="text-4xl text-slate-500 font-bold">Small Cabinet - Brown</h2>
-            <div className="text-aluminium-500 text-[18px] mt-3">Meja dan Lemari</div>
+            <h2 className="text-4xl text-slate-500 font-bold">{product?.name}</h2>
+            <div className="text-aluminium-500 text-[18px] mt-3">{product?.category}</div>
             {/* <div className="w-[194px] h-[49px] bg-athens-gray-100 rounded-lg mt-6 flex items-center justify-center">
               <text className="text-slate-500 text-2xl font-bold">Rp500.000,00</text>
             </div> */}
             <div className="w-full">
-              <h4 className="text-jumbo-700 mt-6 leading-loose">
-                Lemari mungil dengan desain minimalis berwarna cokelat, cocok untuk menyimpan barang-barang kecil sambil
-                mempercantik ruangan.
-              </h4>
+              <h4 className="text-jumbo-700 mt-6 leading-loose">{product?.desc}</h4>
             </div>
             <Link
               href={"#"}
@@ -95,95 +195,41 @@ function ProductDetail() {
             <FaArrowRight className="text-slate-700 text-lg ms-2" />
           </div>
         </div>
-        <div className="w-full grid grid-cols-4 gap-4">
-          <div className="min-h-[400px] bg-white border-seashell-100 border-[1px] rounded-xl shadow-md hover:shadow-lg transition-all ease-in-out duration-500 p-5 flex flex-col justify-between">
-            <div className="w-full">
-              <div className="w-full h-[215px] bg-seashell-200 rounded-xl overflow-hidden">
-                <Image
-                  src={"/assets/product/set-meja-makan.jpg"}
-                  alt="set-meja-makan.jpg"
-                  width={500}
-                  height={500}
-                  quality={50}
-                  className="object-cover w-full h-full object-center"
-                />
-              </div>
-              <h4 className="text-slate-500 mt-4 text-lg line-clamp-2">Set Meja Makan Kayu Jati</h4>
-              <h3 className="text-heather-300 mt-1 font-light text-lg">Meja dan Kursi</h3>
-            </div>
-            <Link
-              href={"#"}
-              className="py-[7px] px-5 bg-slate-600 hover:bg-slate-700 text-white text-[14px] rounded-[10px] mt-5 z-10 text-center"
-            >
-              Selengkapnya
-            </Link>
-          </div>
-          <div className="min-h-[400px] bg-white border-seashell-100 border-[1px] rounded-xl shadow-md hover:shadow-lg transition-all ease-in-out duration-500 p-5 flex flex-col justify-between">
-            <div className="w-full">
-              <div className="w-full h-[215px] bg-seashell-200 rounded-xl overflow-hidden">
-                <Image
-                  src={"/assets/product/sofa-bed-kulit-2-seat.jpg"}
-                  alt="sofa-bed-kulit-2-seat.jpg"
-                  width={500}
-                  height={500}
-                  quality={50}
-                  className="object-cover w-full h-full object-center"
-                />
-              </div>
-              <h4 className="text-slate-500 mt-4 text-lg line-clamp-2">Sofa Bed Kulit 2 Seat - Hitam dan Putih</h4>
-              <h3 className="text-heather-300 mt-1 font-light text-lg">Sofa</h3>
-            </div>
-            <Link
-              href={"#"}
-              className="py-[7px] px-5 bg-slate-600 hover:bg-slate-700 text-white text-[14px] rounded-[10px] mt-5 z-10 text-center"
-            >
-              Selengkapnya
-            </Link>
-          </div>
-          <div className="min-h-[400px] bg-white border-seashell-100 border-[1px] rounded-xl shadow-md hover:shadow-lg transition-all ease-in-out duration-500 p-5 flex flex-col justify-between">
-            <div className="w-full">
-              <div className="w-full h-[215px] bg-seashell-200 rounded-xl overflow-hidden">
-                <Image
-                  src={"/assets/product/lemari-rak.jpg"}
-                  alt="lemari-rak.jpg"
-                  width={500}
-                  height={500}
-                  quality={50}
-                  className="object-cover w-full h-full object-center"
-                />
-              </div>
-              <h4 className="text-slate-500 mt-4 text-lg line-clamp-2">Lemari Rak Sepatu Susun 4 Tingkat - Putih</h4>
-              <h3 className="text-heather-300 mt-1 font-light text-lg">Lemari</h3>
-            </div>
-            <Link
-              href={"#"}
-              className="py-[7px] px-5 bg-slate-600 hover:bg-slate-700 text-white text-[14px] rounded-[10px] mt-5 z-10 text-center"
-            >
-              Selengkapnya
-            </Link>
-          </div>
-          <div className="min-h-[400px] bg-white border-seashell-100 border-[1px] rounded-xl shadow-md hover:shadow-lg transition-all ease-in-out duration-500 p-5 flex flex-col justify-between">
-            <div className="w-full">
-              <div className="w-full h-[215px] bg-seashell-200 rounded-xl overflow-hidden">
-                <Image
-                  src={"/assets/product/set-meja-belajar.jpg"}
-                  alt="set-meja-belajar.jpg"
-                  width={500}
-                  height={500}
-                  quality={50}
-                  className="object-cover w-full h-full object-center"
-                />
-              </div>
-              <h4 className="text-slate-500 mt-4 text-lg line-clamp-2">Set Meja dan Kursi Belajar</h4>
-              <h3 className="text-heather-300 mt-1 font-light text-lg">Meja dan Kursi</h3>
-            </div>
-            <Link
-              href={"#"}
-              className="py-[7px] px-5 bg-slate-600 hover:bg-slate-700 text-white text-[14px] rounded-[10px] mt-5 z-10 text-center"
-            >
-              Selengkapnya
-            </Link>
-          </div>
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <ProductCard
+            id={1}
+            name={"Modern Arm Chair"}
+            category={"Kursi"}
+            price={1600000}
+            picture={"modern-arm-chair.png"}
+          />
+          <ProductCard id={2} name={"Brown Chair"} category={"Kursi"} price={1600000} picture={"brown-chair.png"} />
+          <ProductCard id={3} name={"Clasic Chair"} category={"Kursi"} price={1600000} picture={"clasic.png"} />
+          <ProductCard id={4} name={"Modern Chair"} category={"Kursi"} price={3800000} picture={"modern.png"} />
+          <ProductCard
+            id={5}
+            name={"Luxury Blue Sofa"}
+            category={"Sofa"}
+            price={4000000}
+            picture={"luxury-blue-sofa.png"}
+          />
+          <ProductCard id={6} name={"Cabinet"} category={"Lemari"} price={1700000} picture={"cabinet.png"} />
+          <ProductCard id={7} name={"Black Chair"} category={"Kursi"} price={1700000} picture={"black-chair.png"} />
+          <ProductCard id={8} name={"Kitchen Set"} category={"Lemari"} price={1700000} picture={"kitchen-set.png"} />
+          <ProductCard
+            id={9}
+            name={"Wooden Buffet"}
+            category={"buffet"}
+            price={1700000}
+            picture={"wooden-buffet.png"}
+          />
+          <ProductCard
+            id={10}
+            name={"Small Cabinet"}
+            category={"Lemari"}
+            price={1700000}
+            picture={"small-cabinet.png"}
+          />
         </div>
       </div>
     </div>
