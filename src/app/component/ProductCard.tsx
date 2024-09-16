@@ -31,7 +31,7 @@ function ProductCard({ id, name, category, price, picture }: ProductDetail) {
         </div>
         <h3 className="text-slate-500 mt-4 text-base line-clamp-1 px-5">{name}</h3>
         <h3 className="text-heather-300 mt-1 text mx-5 text-sm">{category}</h3>
-        <h3 className="text-slate-500 mt-1 px-5 font-bold">{priceIDR(price)}</h3>
+        <h3 className="text-slate-500 mt-1 px-5 font-bold line-clamp-1">{priceIDR(price)}</h3>
       </div>
       <Link
         href={`/product/${id}`}

@@ -49,6 +49,7 @@ function Navbar() {
             height={1000}
             quality={100}
             alt="logo"
+            priority
           />
         </Link>
         <ul className="hidden md:flex items-center justify-center">
@@ -62,9 +63,9 @@ function Navbar() {
             <Link href={"/product"} className="text-slate-200 hover:text-white ms-7">
               Produk
             </Link>
-            <Link href={"/gallery"} className="text-slate-200 hover:text-white ms-7">
+            {/* <Link href={"/gallery"} className="text-slate-200 hover:text-white ms-7">
               Galeri
-            </Link>
+            </Link> */}
             <Link href={"/contact"} className="text-slate-200 hover:text-white ms-7">
               Kontak
             </Link>
@@ -96,7 +97,7 @@ function Navbar() {
           <ul className="flex flex-col font-medium mt-4 rounded-lg bg-slate-700  dark:border-gray-700">
             <li>
               <Link
-                href={"/#home"}
+                href={"/"}
                 className="block py-2 px-3 text-slate-200 hover:bg-primary-dark dark:text-slate-200 dark:hover:bg-primary-dark dark:hover:text-white"
                 aria-current="page"
               >
@@ -105,7 +106,7 @@ function Navbar() {
             </li>
             <li>
               <Link
-                href={"/#article"}
+                href={"/about"}
                 className="block py-2 px-3 text-slate-200 hover:bg-primary-dark dark:text-slate-200 dark:hover:bg-primary-dark dark:hover:text-white"
               >
                 Tentang Kami
@@ -113,23 +114,23 @@ function Navbar() {
             </li>
             <li>
               <Link
-                href={"/#about"}
+                href={"/product"}
                 className="block py-2 px-3 text-slate-200 hover:bg-primary-dark dark:text-slate-200 md:dark:hover:text-white dark:hover:bg-primary-dark dark:hover:text-white"
               >
                 Produk
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href={"/#about"}
                 className="block py-2 px-3 text-slate-200 hover:bg-primary-dark dark:text-slate-200 md:dark:hover:text-white dark:hover:bg-primary-dark dark:hover:text-white"
               >
                 Galeri
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
-                href={"/#about"}
+                href={"/contact"}
                 className="block py-2 px-3 text-slate-200 hover:bg-primary-dark dark:text-slate-200 md:dark:hover:text-white dark:hover:bg-primary-dark dark:hover:text-white"
               >
                 Kontak
