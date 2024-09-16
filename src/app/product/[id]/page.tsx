@@ -4,13 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+
+// import required modules
+import { FreeMode, Pagination } from "swiper/modules";
 
 function ProductDetail(props: { params: { id: string } }) {
   const { params } = props;
   const id = parseInt(params.id);
-  console.log(id);
-
   const products = [
     {
       id: 1,
@@ -96,6 +101,13 @@ function ProductDetail(props: { params: { id: string } }) {
 
   const [product, setProduct] = useState<any>(null);
 
+  const priceIDR = (price: number) => {
+    return price.toLocaleString("id-ID", {
+      style: "currency",
+      currency: "IDR",
+    });
+  };
+
   useEffect(() => {
     const res = products.find((items) => items.id == id);
     setProduct(res);
@@ -114,6 +126,7 @@ function ProductDetail(props: { params: { id: string } }) {
                   height={500}
                   alt="small-cabinet"
                   quality={80}
+                  priority
                   className="h-full w-auto mx-auto"
                 />
               ) : (
@@ -122,80 +135,114 @@ function ProductDetail(props: { params: { id: string } }) {
                 </div>
               )}
             </div>
-            {/* <div className="w-full overflow-x-auto whitespace-nowrap gap-[33px] space-x-8 mt-8 scroll-smooth scrollbar-thumb-slate-400 scrollbar-track-transparent scrollbar-thin">
-              <div className="inline-block w-[160px] h-[160px] bg-slate-100 rounded-[20px] overflow-hidden">
-                <Image
-                  src={"/assets/product/small-cabinet.png"}
-                  width={500}
-                  height={500}
-                  alt="small-cabinet"
-                  quality={80}
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-              <div className="inline-block w-[160px] h-[160px] bg-slate-100 rounded-[20px] overflow-hidden">
-                <Image
-                  src={"/assets/product/small-cabinet.png"}
-                  width={500}
-                  height={500}
-                  alt="small-cabinet"
-                  quality={80}
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-              <div className="inline-block w-[160px] h-[160px] bg-slate-100 rounded-[20px] overflow-hidden">
-                <Image
-                  src={"/assets/product/small-cabinet.png"}
-                  width={500}
-                  height={500}
-                  alt="small-cabinet"
-                  quality={80}
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-              <div className="inline-block w-[160px] h-[160px] bg-slate-100 rounded-[20px] overflow-hidden">
-                <Image
-                  src={"/assets/product/small-cabinet.png"}
-                  width={500}
-                  height={500}
-                  alt="small-cabinet"
-                  quality={80}
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-            </div> */}
+          </div>
+          <div className="w-full mt-6">
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              freeMode={true}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[FreeMode, Pagination]}
+            >
+              <SwiperSlide className="bg-slate-100 rounded-xl aspect-square">
+                {product?.picture ? (
+                  <Image
+                    src={`/assets/product/${product.picture}`}
+                    width={500}
+                    height={500}
+                    alt="small-cabinet"
+                    quality={80}
+                    className="h-full w-auto mx-auto"
+                  />
+                ) : (
+                  <div className="h-full w-full flex items-center justify-center bg-gray-200">
+                    <p className="text-gray-600">No image available</p>
+                  </div>
+                )}
+              </SwiperSlide>
+              <SwiperSlide className="bg-slate-100 rounded-xl aspect-square">
+                {product?.picture ? (
+                  <Image
+                    src={`/assets/product/${product.picture}`}
+                    width={500}
+                    height={500}
+                    alt="small-cabinet"
+                    quality={80}
+                    className="h-full w-auto mx-auto"
+                  />
+                ) : (
+                  <div className="h-full w-full flex items-center justify-center bg-gray-200">
+                    <p className="text-gray-600">No image available</p>
+                  </div>
+                )}
+              </SwiperSlide>
+              <SwiperSlide className="bg-slate-100 rounded-xl aspect-square">
+                {product?.picture ? (
+                  <Image
+                    src={`/assets/product/${product.picture}`}
+                    width={500}
+                    height={500}
+                    alt="small-cabinet"
+                    quality={80}
+                    className="h-full w-auto mx-auto"
+                  />
+                ) : (
+                  <div className="h-full w-full flex items-center justify-center bg-gray-200">
+                    <p className="text-gray-600">No image available</p>
+                  </div>
+                )}
+              </SwiperSlide>
+              <SwiperSlide className="bg-slate-100 rounded-xl aspect-square">
+                {product?.picture ? (
+                  <Image
+                    src={`/assets/product/${product.picture}`}
+                    width={500}
+                    height={500}
+                    alt="small-cabinet"
+                    quality={80}
+                    className="h-full w-auto mx-auto"
+                  />
+                ) : (
+                  <div className="h-full w-full flex items-center justify-center bg-gray-200">
+                    <p className="text-gray-600">No image available</p>
+                  </div>
+                )}
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
         <div className="w-full lg:w-1/2">
           <div className="w-full">
             <h2 className="text-4xl text-slate-500 font-bold">{product?.name}</h2>
-            <div className="text-aluminium-500 text-[18px] mt-3">{product?.category}</div>
-            {/* <div className="w-[194px] h-[49px] bg-athens-gray-100 rounded-lg mt-6 flex items-center justify-center">
-              <text className="text-slate-500 text-2xl font-bold">Rp500.000,00</text>
-            </div> */}
-            <div className="w-full">
-              <h4 className="text-jumbo-700 mt-6 leading-loose">{product?.desc}</h4>
-            </div>
+            <h4 className="text-aluminium-500 text-[18px] mt-3">{product?.category}</h4>
+            {product?.category && <h3 className="text-slate-700 mt-2 font-bold text-2xl">{priceIDR(product.price)}</h3>}
+            <h4 className="text-jumbo-700 mt-2 leading-loose">{product?.desc}</h4>
+
             <Link
               href={"#"}
-              className="bg-slate-600 hover:bg-slate-700 px-[47px] py-3 block w-fit text-white font-semibold rounded-[10px] mt-12"
+              className="bg-slate-600 hover:bg-slate-700 px-8 py-3 flex w-fit text-white font-semibold rounded-full mt-6 items-center"
             >
+              <span className="me-2 text-xl">
+                <FaWhatsapp />
+              </span>
               Hubungi Kami
             </Link>
           </div>
         </div>
       </div>
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-10 pb-10">
-        <div className="w-full flex justify-between items-center mb-4">
+        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
           <h2 className="text-[32px] text-slate-700 font-bold">Produk Terkait</h2>
-          <div className="flex items-center">
-            <Link href={"#"} className="text-slate-600 hover:text-slate-700 font-semibold">
+          <div className="flex items-center group mt-4 md:mt-0">
+            <Link href={"#"} className="text-slate-500 group-hover:text-slate-700 font-semibold">
               Lihat lebih banyak
             </Link>
-            <FaArrowRight className="text-slate-700 text-lg ms-2" />
+            <FaArrowRight className="text-slate-500 group-hover:text-slate-700 text-lg ms-2" />
           </div>
         </div>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           <ProductCard
             id={1}
             name={"Modern Arm Chair"}

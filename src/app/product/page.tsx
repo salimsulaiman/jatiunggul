@@ -29,10 +29,10 @@ function Product() {
       <section className="w-full bg-white mt-4" id="about">
         <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 flex flex-col gap-4 items-center">
           {/* populer */}
-          <div className="w-full flex justify-between items-center">
+          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center">
             <h2 className="text-[32px] text-slate-700 font-bold">Paling Populer</h2>
-            <div className="flex items-center">
-              <div className={`relative w-[235px]`}>
+            <div className="flex items-center justify-between w-full md:w-fit md:justify-start mt-6 md:mt-0">
+              <div className={`relative w-full md:w-[235px]`}>
                 <input
                   type="search"
                   className="mx-auto w-full bg-white-bone rounded-full px-[20px] py-[13px] placeholder:text-rock-blue-500 placeholder:font-medium font-bold text-slate-500"
@@ -41,13 +41,19 @@ function Product() {
                 <FaSearch className="absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer text-slate-400 hover:text-slate-700 text-[23px]" />
               </div>
               <div
-                className="h-[47px] w-[47px] bg-white-bone rounded-full ms-2 cursor-pointer hover:bg-white-bone-100 flex items-center justify-center"
+                className="h-[47px] w-[47px] p-3 bg-white-bone rounded-full ms-2 cursor-pointer hover:bg-white-bone-100 flex items-center justify-center"
                 onClick={() => {
                   const filterButton = document.getElementById("filterButton") as HTMLDialogElement;
                   filterButton?.showModal();
                 }}
               >
-                <Image width={24} height={24} alt="filter" src={"/assets/icons/filter.png"} />
+                <Image
+                  width={24}
+                  height={24}
+                  alt="filter"
+                  src={"/assets/icons/filter.png"}
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
               <dialog id="filterButton" className="modal">
                 <div className="modal-box">
@@ -56,11 +62,11 @@ function Product() {
                     <option disabled selected>
                       Pilih Kategori
                     </option>
-                    <option>Lemari</option>
-                    <option>Kursi</option>
-                    <option>Sofa</option>
-                    <option>Buffet</option>
-                    <option>Meja</option>
+                    <option value={"Lemari"}>Lemari</option>
+                    <option value={"Kursi"}>Kursi</option>
+                    <option value={"Sofa"}>Sofa</option>
+                    <option value={"Buffet"}>Buffet</option>
+                    <option value={"Meja"}>Meja</option>
                   </select>
                 </div>
                 <form method="dialog" className="modal-backdrop">
@@ -137,16 +143,16 @@ function Product() {
             </div>
           </div>
           {/* new */}
-          <div className="w-full flex justify-between items-center mt-24">
+          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center mt-24">
             <h2 className="text-[32px] text-slate-700 font-bold">Produk Terbaru</h2>
-            <div className="flex items-center">
-              <Link href={"#"} className="text-slate-600 hover:text-slate-700 font-semibold">
+            <div className="flex items-center mt-4 md:mt-0 group">
+              <Link href={"#"} className="text-slate-500 group-hover:text-slate-700 font-semibold">
                 Lihat lebih banyak
               </Link>
-              <FaArrowRight className="text-slate-700 text-lg ms-2" />
+              <FaArrowRight className="text-slate-500 group-hover:text-slate-700 text-lg ms-2" />
             </div>
           </div>
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             <ProductCard
               id={1}
               name={"Modern Arm Chair"}

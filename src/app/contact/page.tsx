@@ -1,6 +1,7 @@
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { IoIosSend, IoMdSend } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 
 function Contact() {
@@ -89,7 +90,12 @@ function Contact() {
                 placeholder="Pesan"
               />
               <div className="w-full flex justify-end mt-4">
-                <button className="bg-slate-700 text-white rounded-lg px-[39px] py-[12px]">Kirim</button>
+                <button className="bg-slate-600 hover:bg-slate-700 text-white px-8 py-3 rounded-full flex items-center">
+                  Kirim
+                  <span>
+                    <IoMdSend className="text-xl ms-2" />
+                  </span>
+                </button>
               </div>
             </form>
           </div>
