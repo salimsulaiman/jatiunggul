@@ -16,13 +16,19 @@ import { FreeMode, Pagination } from "swiper/modules";
 function ProductDetail(props: { params: { id: string } }) {
   const { params } = props;
   const id = parseInt(params.id);
+
+  const [currentPicture, setCurrentPicture] = useState<string>("");
   const products = [
     {
       id: 1,
       name: "Modern Arm Chair",
       category: "Kursi",
       price: 1600000,
-      picture: "modern-arm-chair.png",
+      pictures: [
+        "/assets/product/modern-arm-chair.png",
+        "https://plus.unsplash.com/premium_photo-1683120673588-682452cc83a0?fm=jpg&q=60&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1683141507095-7a8e587663aa?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      ],
       desc: "Kursi lengan modern yang dirancang dengan bentuk yang ergonomis dan estetika kontemporer. Terbuat dari bahan berkualitas tinggi, kursi ini menawarkan kenyamanan maksimal dengan bantalan empuk yang mendukung postur tubuh dengan baik. Ideal untuk ruang tamu, ruang kerja, atau area lounge.",
     },
     {
@@ -30,7 +36,12 @@ function ProductDetail(props: { params: { id: string } }) {
       name: "Brown Chair",
       category: "Kursi",
       price: 1600000,
-      picture: "brown-chair.png",
+      pictures: [
+        "/assets/product/brown-chair.png",
+        "https://images.unsplash.com/photo-1644711454038-141e4bae4a52?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1658071372366-8a658d8a9835?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1659246973603-748505504837?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      ],
       desc: "Kursi berwarna cokelat dengan desain klasik yang menggabungkan estetika tradisional dan kenyamanan modern. Dibalut dengan bahan yang tahan lama, kursi ini cocok untuk penggunaan sehari-hari dan dapat melengkapi berbagai gaya interior, dari minimalis hingga klasik.",
     },
     {
@@ -38,7 +49,11 @@ function ProductDetail(props: { params: { id: string } }) {
       name: "Clasic Chair",
       category: "Kursi",
       price: 1600000,
-      picture: "clasic.png",
+      pictures: [
+        "/assets/product/clasic.png",
+        "https://plus.unsplash.com/premium_photo-1664391899883-59de759c56a8?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1612372606404-0ab33e7187ee?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      ],
       desc: "Kursi klasik dengan desain elegan yang menonjolkan sentuhan vintage namun tetap nyaman untuk digunakan. Terbuat dari bahan berkualitas tinggi dengan detail yang rapi, kursi ini cocok untuk ruang makan, ruang kerja, atau ruang tamu yang membutuhkan sentuhan klasik.",
     },
     {
@@ -46,7 +61,11 @@ function ProductDetail(props: { params: { id: string } }) {
       name: "Modern Chair",
       category: "Kursi",
       price: 3800000,
-      picture: "modern.png",
+      pictures: [
+        "/assets/product/modern.png",
+        "https://plus.unsplash.com/premium_photo-1705169612410-50d9576035f7?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1680350303578-15118239eb6a?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      ],
       desc: "Kursi modern dengan desain kontemporer yang dilengkapi dengan fitur penyesuaian untuk meningkatkan kenyamanan. Didesain dengan garis-garis bersih dan bahan premium, kursi ini sangat cocok untuk lingkungan kantor, ruang rapat, atau ruang tamu yang mengutamakan gaya dan fungsi.",
     },
     {
@@ -54,7 +73,13 @@ function ProductDetail(props: { params: { id: string } }) {
       name: "Luxury Blue Sofa",
       category: "Sofa",
       price: 4000000,
-      picture: "luxury-blue-sofa.png",
+      pictures: [
+        "/assets/product/luxury-blue-sofa.png",
+        "https://images.unsplash.com/photo-1584198541667-f790d4f62742?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1723874468810-3147a74bb3a7?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1608529271579-4eebc4db1b0e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1516843969861-162ea31e8072?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      ],
       desc: "Sofa mewah berwarna biru yang memberikan sentuhan elegan pada ruang tamu Anda. Terbuat dari bahan berkualitas tinggi dengan busa memori yang empuk, sofa ini menawarkan kenyamanan ekstra dan desain yang menawan. Ideal untuk bersantai atau sebagai pusat perhatian di ruang tamu modern.",
     },
     {
@@ -62,7 +87,7 @@ function ProductDetail(props: { params: { id: string } }) {
       name: "Cabinet",
       category: "Lemari",
       price: 1700000,
-      picture: "cabinet.png",
+      pictures: ["/assets/product/cabinet.png"],
       desc: "Lemari serbaguna dengan desain yang sederhana namun fungsional. Memiliki ruang penyimpanan yang luas dengan rak yang dapat disesuaikan, lemari ini ideal untuk menyimpan berbagai barang dengan rapi. Cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja.",
     },
     {
@@ -70,7 +95,13 @@ function ProductDetail(props: { params: { id: string } }) {
       name: "Black Chair",
       category: "Kursi",
       price: 1700000,
-      picture: "black-chair.png",
+      pictures: [
+        "/assets/product/black-chair.png",
+        "https://images.unsplash.com/photo-1591565518071-f3c0b81725aa?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1571898223382-0aa3499f0f2a?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1700604012496-e7888f924bf3?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1503971116037-1e438143ac4e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      ],
       desc: "Kursi hitam yang menawarkan desain modern dan stylish dengan bahan berkualitas tinggi. Didesain untuk memberikan kenyamanan yang optimal dengan fitur yang mendukung postur tubuh, kursi ini cocok untuk berbagai ruang, termasuk kantor, ruang tamu, atau ruang kerja.",
     },
     {
@@ -78,7 +109,7 @@ function ProductDetail(props: { params: { id: string } }) {
       name: "Kitchen Set",
       category: "Lemari",
       price: 1700000,
-      picture: "kitchen-set.png",
+      pictures: ["/assets/product/kitchen-set.png"],
       desc: "Set dapur lengkap yang dirancang untuk memenuhi kebutuhan memasak dan penyimpanan Anda. Dengan desain yang praktis dan fungsional, set dapur ini menyediakan berbagai ruang penyimpanan untuk peralatan memasak dan bahan makanan, menjadikannya pilihan ideal untuk dapur rumah.",
     },
     {
@@ -86,7 +117,7 @@ function ProductDetail(props: { params: { id: string } }) {
       name: "Wooden Buffet",
       category: "Buffet",
       price: 1700000,
-      picture: "wooden-buffet.png",
+      pictures: ["/assets/product/wooden-buffet.png"],
       desc: "Buffet kayu dengan desain tradisional yang menghadirkan kehangatan dan keindahan pada ruang makan Anda. Dikenal karena kekuatan dan daya tahannya, buffet ini menyediakan ruang penyimpanan yang luas untuk peralatan makan dan barang-barang lainnya, sambil menambahkan sentuhan estetika yang elegan.",
     },
     {
@@ -94,10 +125,14 @@ function ProductDetail(props: { params: { id: string } }) {
       name: "Small Cabinet",
       category: "Lemari",
       price: 1700000,
-      picture: "small-cabinet.png",
+      pictures: ["/assets/product/small-cabinet.png"],
       desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
     },
   ];
+
+  const changePicture = (element: string) => {
+    setCurrentPicture(element);
+  };
 
   const [product, setProduct] = useState<any>(null);
 
@@ -111,6 +146,9 @@ function ProductDetail(props: { params: { id: string } }) {
   useEffect(() => {
     const res = products.find((items) => items.id == id);
     setProduct(res);
+    if (res && res.pictures.length > 0) {
+      setCurrentPicture(res.pictures[0]);
+    }
   }, []);
 
   return (
@@ -118,16 +156,16 @@ function ProductDetail(props: { params: { id: string } }) {
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-36 pb-10 flex flex-col lg:flex-row justify-center gap-16">
         <div className="w-full lg:w-1/2">
           <div className="w-full">
-            <div className="w-full h-[403px] rounded-[20px] bg-slate-100 overflow-hidden p-4">
-              {product?.picture ? (
+            <div className="w-full h-[403px] rounded-[20px] bg-slate-100 overflow-hidden">
+              {product?.pictures && currentPicture ? (
                 <Image
-                  src={`/assets/product/${product.picture}`}
+                  src={`${currentPicture}`}
                   width={500}
                   height={500}
                   alt="small-cabinet"
                   quality={80}
                   priority
-                  className="h-full w-auto mx-auto"
+                  className="h-full w-full object-contain"
                 />
               ) : (
                 <div className="h-full w-full flex items-center justify-center bg-gray-200">
@@ -146,70 +184,31 @@ function ProductDetail(props: { params: { id: string } }) {
               }}
               modules={[FreeMode, Pagination]}
             >
-              <SwiperSlide className="bg-slate-100 rounded-xl aspect-square">
-                {product?.picture ? (
-                  <Image
-                    src={`/assets/product/${product.picture}`}
-                    width={500}
-                    height={500}
-                    alt="small-cabinet"
-                    quality={80}
-                    className="h-full w-auto mx-auto"
-                  />
-                ) : (
-                  <div className="h-full w-full flex items-center justify-center bg-gray-200">
-                    <p className="text-gray-600">No image available</p>
-                  </div>
-                )}
-              </SwiperSlide>
-              <SwiperSlide className="bg-slate-100 rounded-xl aspect-square">
-                {product?.picture ? (
-                  <Image
-                    src={`/assets/product/${product.picture}`}
-                    width={500}
-                    height={500}
-                    alt="small-cabinet"
-                    quality={80}
-                    className="h-full w-auto mx-auto"
-                  />
-                ) : (
-                  <div className="h-full w-full flex items-center justify-center bg-gray-200">
-                    <p className="text-gray-600">No image available</p>
-                  </div>
-                )}
-              </SwiperSlide>
-              <SwiperSlide className="bg-slate-100 rounded-xl aspect-square">
-                {product?.picture ? (
-                  <Image
-                    src={`/assets/product/${product.picture}`}
-                    width={500}
-                    height={500}
-                    alt="small-cabinet"
-                    quality={80}
-                    className="h-full w-auto mx-auto"
-                  />
-                ) : (
-                  <div className="h-full w-full flex items-center justify-center bg-gray-200">
-                    <p className="text-gray-600">No image available</p>
-                  </div>
-                )}
-              </SwiperSlide>
-              <SwiperSlide className="bg-slate-100 rounded-xl aspect-square">
-                {product?.picture ? (
-                  <Image
-                    src={`/assets/product/${product.picture}`}
-                    width={500}
-                    height={500}
-                    alt="small-cabinet"
-                    quality={80}
-                    className="h-full w-auto mx-auto"
-                  />
-                ) : (
-                  <div className="h-full w-full flex items-center justify-center bg-gray-200">
-                    <p className="text-gray-600">No image available</p>
-                  </div>
-                )}
-              </SwiperSlide>
+              {product?.pictures.map((element: any, index: number) => {
+                return (
+                  <SwiperSlide
+                    className="bg-slate-100 rounded-xl aspect-square relative overflow-hidden cursor-pointer"
+                    key={index}
+                    onClick={() => changePicture(element)}
+                  >
+                    {element ? (
+                      <Image
+                        src={`${element}`}
+                        width={500}
+                        height={500}
+                        alt={`${element}`}
+                        quality={20}
+                        priority
+                        className="h-full w-full absolute object-cover object-center mx-auto"
+                      />
+                    ) : (
+                      <div className="h-full w-full flex items-center justify-center bg-gray-200">
+                        <p className="text-gray-600">No image available</p>
+                      </div>
+                    )}
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           </div>
         </div>

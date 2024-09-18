@@ -1,13 +1,18 @@
 "use client";
+import ProductCard from "@/app/component/ProductCard";
+import { log } from "console";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import React, { useState } from "react";
-import { BiArrowFromLeft } from "react-icons/bi";
-import { FaArrowRight, FaSearch, FaShieldAlt } from "react-icons/fa";
-import ProductCard from "../component/ProductCard";
+import { FaArrowRight, FaSearch } from "react-icons/fa";
 
-function Product() {
+function SearchProduct() {
+  const searchParams = useSearchParams();
+  const search = searchParams.get("product");
+  //   console.log(search);
   const [category, setCategory] = useState<string>("");
+
   return (
     <div className="w-full font-urbanist" id="home">
       {/* product */}
@@ -29,8 +34,8 @@ function Product() {
       <section className="w-full bg-white mt-4" id="about">
         <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 flex flex-col gap-4 items-center">
           {/* populer */}
-          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center">
-            <h2 className="text-[32px] text-slate-700 font-bold">Paling Populer</h2>
+          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
+            <div className="text-3xl text-slate-700 font-bold">Modern Arm</div>
             <div className="flex items-center justify-between w-full md:w-fit md:justify-start mt-6 md:mt-0">
               <div className={`relative w-full md:w-[235px]`}>
                 <input
@@ -77,83 +82,6 @@ function Product() {
                   <button>close</button>
                 </form>
               </dialog>
-            </div>
-          </div>
-          <div className="w-full grid grid-cols-4 gap-5 mt-4">
-            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg col-span-4 md:col-span-2 lg:col-span-1 order-last lg:order-first">
-              <div className="w-full flex flex-col items-end">
-                <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">Brown Chair</h2>
-                <h4 className="text-[15px] text-slate-500 text-start z-10">Kursi indah dan nyaman</h4>
-                <Link
-                  href={"/product/2"}
-                  className="py-[5px] px-4 bg-slate-600 hover:bg-slate-700 text-white text-[13px] rounded-[10px] mt-5 z-10"
-                >
-                  Lihat Produk
-                </Link>
-              </div>
-              <Image
-                src={"/assets/product/brown-chair.png"}
-                alt="brown-chair"
-                width={200}
-                height={200}
-                className="w-[155px] h-auto absolute -bottom-6 left-7"
-              />
-            </div>
-            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] col-span-4 lg:col-span-2 shadow-lg">
-              <div className="w-full flex gap-4 h-full items-center">
-                <div className="w-1/2 h-full">
-                  <Image
-                    src={"/assets/product/modern-arm-chair.png"}
-                    alt="modern-arm-chair"
-                    width={200}
-                    height={200}
-                    className="w-auto h-full ms-auto me-6"
-                  />
-                </div>
-                <div className="w-1/2 flex flex-col items-start">
-                  <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10 line-clamp-2 md:line-clamp-none">
-                    Modern Arm Chair
-                  </h2>
-                  <h4 className="text-[15px] text-slate-500 text-start z-10 line-clamp-2 md:line-clamp-none">
-                    Kursi minimalis yang mengutamakan kenyamanan dan gaya kontemporer nan klasik
-                  </h4>
-                  <Link
-                    href={"/product/1"}
-                    className="py-[5px] px-4 bg-slate-600 hover:bg-slate-700 text-white text-[13px] rounded-[10px] mt-5 z-10"
-                  >
-                    Lihat Produk
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg col-span-4 md:col-span-2 lg:col-span-1">
-              <div className="w-full flex flex-col items-start">
-                <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">Small Cabinet</h2>
-                <h4 className="text-[15px] text-slate-500 text-start z-10">Bentuk nyaman dan stylish</h4>
-                <Link
-                  href={"/product/10"}
-                  className="py-[5px] px-4 bg-slate-600 hover:bg-slate-700 text-white text-[13px] rounded-[10px] mt-5 z-10"
-                >
-                  Lihat Produk
-                </Link>
-              </div>
-              <Image
-                src={"/assets/product/small-cabinet.png"}
-                alt="small-cabinet"
-                width={200}
-                height={200}
-                className="w-[175px] h-auto absolute -bottom-4 right-2"
-              />
-            </div>
-          </div>
-          {/* new */}
-          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center mt-24">
-            <h2 className="text-[32px] text-slate-700 font-bold">Produk Terbaru</h2>
-            <div className="flex items-center mt-4 md:mt-0 group">
-              <Link href={"#"} className="text-slate-500 group-hover:text-slate-700 font-semibold">
-                Lihat lebih banyak
-              </Link>
-              <FaArrowRight className="text-slate-500 group-hover:text-slate-700 text-lg ms-2" />
             </div>
           </div>
           <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
@@ -207,4 +135,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default SearchProduct;
