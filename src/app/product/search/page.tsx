@@ -8,9 +8,9 @@ import React, { useState } from "react";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
 
 function SearchProduct() {
-  const searchParams = useSearchParams();
-  const search = searchParams.get("product");
-  //   console.log(search);
+  //   const searchParams = useSearchParams();
+  //   const search = searchParams.get("product");
+  //   //   console.log(search);
   const [category, setCategory] = useState<string>("");
 
   return (
