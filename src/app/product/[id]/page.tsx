@@ -88,9 +88,7 @@ function ProductDetail(props: { params: { id: string } }) {
       name: "Cabinet",
       category: "Lemari",
       price: 1700000,
-      pictures: [
-        "https://utfs.io/f/UyKYMyzOlFb28clYdSfWBu5Yp1ETJ9vHzceAiXg6V7bOSxof",
-      ],
+      pictures: ["https://utfs.io/f/UyKYMyzOlFb28clYdSfWBu5Yp1ETJ9vHzceAiXg6V7bOSxof"],
       desc: "Lemari serbaguna dengan desain yang sederhana namun fungsional. Memiliki ruang penyimpanan yang luas dengan rak yang dapat disesuaikan, lemari ini ideal untuk menyimpan berbagai barang dengan rapi. Cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja.",
     },
     {
@@ -120,9 +118,7 @@ function ProductDetail(props: { params: { id: string } }) {
       name: "Wooden Buffet",
       category: "Buffet",
       price: 1700000,
-      pictures: [
-        "https://utfs.io/f/UyKYMyzOlFb2rbYyjX3qCdcTxv0UePIR9AJbEB7ZhMVwHluO",
-      ],
+      pictures: ["https://utfs.io/f/UyKYMyzOlFb2rbYyjX3qCdcTxv0UePIR9AJbEB7ZhMVwHluO"],
       desc: "Buffet kayu dengan desain tradisional yang menghadirkan kehangatan dan keindahan pada ruang makan Anda. Dikenal karena kekuatan dan daya tahannya, buffet ini menyediakan ruang penyimpanan yang luas untuk peralatan makan dan barang-barang lainnya, sambil menambahkan sentuhan estetika yang elegan.",
     },
     {
@@ -130,9 +126,7 @@ function ProductDetail(props: { params: { id: string } }) {
       name: "Small Cabinet",
       category: "Lemari",
       price: 1700000,
-      pictures: [
-        "https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f",
-      ],
+      pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
       desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
     },
   ];
@@ -226,9 +220,7 @@ function ProductDetail(props: { params: { id: string } }) {
                         width={500}
                         height={500}
                         quality={20}
-                        className={
-                          "h-full w-full absolute object-cover object-center mx-auto"
-                        }
+                        className={"h-full w-full absolute object-cover object-center mx-auto"}
                         loading="lazy"
                       />
                     ) : (
@@ -244,20 +236,10 @@ function ProductDetail(props: { params: { id: string } }) {
         </div>
         <div className="w-full lg:w-1/2">
           <div className="w-full">
-            <h2 className="text-4xl text-slate-500 font-bold">
-              {product?.name}
-            </h2>
-            <h4 className="text-aluminium-500 text-[18px] mt-3">
-              {product?.category}
-            </h4>
-            {product?.category && (
-              <h3 className="text-slate-700 mt-2 font-bold text-2xl">
-                {priceIDR(product.price)}
-              </h3>
-            )}
-            <h4 className="text-jumbo-700 mt-2 leading-loose">
-              {product?.desc}
-            </h4>
+            <h2 className="text-4xl text-slate-500 font-bold">{product?.name}</h2>
+            <h4 className="text-aluminium-500 text-[18px] mt-3">{product?.category}</h4>
+            {product?.category && <h3 className="text-slate-700 mt-2 font-bold text-2xl">{priceIDR(product.price)}</h3>}
+            <h4 className="text-jumbo-700 mt-2 leading-loose">{product?.desc}</h4>
 
             <Link
               href={"#"}
@@ -273,90 +255,27 @@ function ProductDetail(props: { params: { id: string } }) {
       </div>
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-10 pb-10">
         <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-          <h2 className="text-[32px] text-slate-700 font-bold">
-            Produk Terkait
-          </h2>
+          <h2 className="text-[32px] text-slate-700 font-bold">Produk Terkait</h2>
           <div className="flex items-center group mt-4 md:mt-0">
-            <Link
-              href={"#"}
-              className="text-slate-500 group-hover:text-slate-700 font-semibold"
-            >
+            <Link href={"#"} className="text-slate-500 group-hover:text-slate-700 font-semibold">
               Lihat lebih banyak
             </Link>
             <FaArrowRight className="text-slate-500 group-hover:text-slate-700 text-lg ms-2" />
           </div>
         </div>
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          <ProductCard
-            id={1}
-            name={"Modern Arm Chair"}
-            category={"Kursi"}
-            price={1600000}
-            picture={"modern-arm-chair.png"}
-          />
-          <ProductCard
-            id={2}
-            name={"Brown Chair"}
-            category={"Kursi"}
-            price={1600000}
-            picture={"brown-chair.png"}
-          />
-          <ProductCard
-            id={3}
-            name={"Clasic Chair"}
-            category={"Kursi"}
-            price={1600000}
-            picture={"clasic.png"}
-          />
-          <ProductCard
-            id={4}
-            name={"Modern Chair"}
-            category={"Kursi"}
-            price={3800000}
-            picture={"modern.png"}
-          />
-          <ProductCard
-            id={5}
-            name={"Luxury Blue Sofa"}
-            category={"Sofa"}
-            price={4000000}
-            picture={"luxury-blue-sofa.png"}
-          />
-          <ProductCard
-            id={6}
-            name={"Cabinet"}
-            category={"Lemari"}
-            price={1700000}
-            picture={"cabinet.png"}
-          />
-          <ProductCard
-            id={7}
-            name={"Black Chair"}
-            category={"Kursi"}
-            price={1700000}
-            picture={"black-chair.png"}
-          />
-          <ProductCard
-            id={8}
-            name={"Kitchen Set"}
-            category={"Lemari"}
-            price={1700000}
-            picture={"kitchen-set.png"}
-          />
-          <ProductCard
-            id={9}
-            name={"Wooden Buffet"}
-            category={"buffet"}
-            price={1700000}
-            picture={"wooden-buffet.png"}
-          />
-          <ProductCard
-            id={10}
-            name={"Small Cabinet"}
-            category={"Lemari"}
-            price={1700000}
-            picture={"small-cabinet.png"}
-          />
+          {products.map((element, index) => {
+            return (
+              <ProductCard
+                key={index}
+                id={element?.id}
+                name={element?.name}
+                category={element?.category}
+                price={element?.price}
+                picture={element?.pictures[0]}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

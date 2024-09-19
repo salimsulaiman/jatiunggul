@@ -1,21 +1,8 @@
 import React from "react";
-import {
-  FaCheck,
-  FaCheckCircle,
-  FaCheckDouble,
-  FaCheckSquare,
-  FaHammer,
-  FaMoneyBill,
-  FaRegCheckCircle,
-  FaShieldAlt,
-  FaShippingFast,
-} from "react-icons/fa";
+import { FaCheck, FaMoneyBill, FaShieldAlt, FaShippingFast } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Footer from "./component/Footer";
-import Navbar from "./component/Navbar";
 import Link from "next/link";
 import Image from "next/image";
-import { IoMdPricetag, IoMdPricetags } from "react-icons/io";
 
 function page() {
   return (
@@ -48,11 +35,6 @@ function page() {
                   </Link>
                 </div>
               </div>
-              {/* <div className="w-full lg:w-7/12 relative h-full">
-                <Image src={"/assets/dot2.png"} loading="lazy" height={500} width={500} alt="sofa" quality={100} className="absolute w-28 h-28 lg:h-36 lg:w-36 bottom-4 left-2"/>
-                <Image src={"/assets/dot1.png"} loading="lazy" height={500} width={500} alt="sofa" quality={100} className="absolute w-28 h-28 lg:h-56 lg:w-56 top-4 -right-4"/>
-                <Image src={"/assets/sofa.png"} loading="lazy" height={500} width={500} alt="sofa" quality={100} className="w-full mt-12 lg:mt-0 relative lg:absolute top-auto lg:top-1/2 -translate-y-0 lg:-translate-y-1/2 left-4 right-0 bottom-0"/>
-              </div> */}
             </div>
           </div>
         </div>
@@ -118,8 +100,6 @@ function page() {
             </div>
           </div>
           <div className="w-full lg:w-5/12 relative  mb-9 lg:mb-0 hidden lg:block">
-            {/* <Image src={"/assets/dot3.png"} height={500} loading="lazy" width={500} alt="sofa" quality={100} className="absolute h-56 w-56 top-0 -left-5 lg:-left-0 hidden lg:block"/>
-            <Image src={"/assets/dot4.png"} height={500} loading="lazy" width={500} alt="sofa" quality={100} className="absolute h-56 w-56 bottom-0 -right-5 lg:-right-0 hidden lg:block"/> */}
             <div className="h-[590px] w-10/12 mx-auto bg-slate-400 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 rounded-xl overflow-hidden">
               <Image
                 src={"/assets/about.jpg"}
@@ -135,7 +115,7 @@ function page() {
       </section>
       {/* end section */}
       {/* product */}
-      <section className="w-full bg-white">
+      {/* <section className="w-full bg-white">
         <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 flex flex-col lg:flex-row justify-between items-center gap-8">
           <div className="min-h-[259px] bg-slate-300 w-full lg:w-1/2 rounded-md flex flex-col sm:flex-row gap-4 p-11">
             <div className="w-full sm:w-1/2 flex flex-col justify-between">
@@ -200,7 +180,7 @@ function page() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="w-full bg-slate-100 mt-4" id="product">
         <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 grid grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           <div className="block md:hidden w-full col-span-3 text-center">

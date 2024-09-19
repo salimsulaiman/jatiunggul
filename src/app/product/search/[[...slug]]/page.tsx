@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
-import { BiArrowFromLeft } from "react-icons/bi";
-import { FaArrowRight, FaSearch, FaShieldAlt } from "react-icons/fa";
-import ProductCard from "../component/ProductCard";
+import { FaSearch } from "react-icons/fa";
+import ProductCard from "@/app/component/ProductCard";
 import { useRouter } from "next/navigation";
 
-function Product() {
+function SearchProduct(props: { searchParams: { product: string } }) {
+  const { searchParams } = props;
+  const searchProduct = searchParams.product;
   const router = useRouter();
 
   const [category, setCategory] = useState<string>("");
@@ -125,7 +125,7 @@ function Product() {
     },
   ];
 
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSearch = (e: any) => {
     e.preventDefault();
     router.push(`/product/search?product=${search}`);
     setSearch("");
@@ -134,25 +134,14 @@ function Product() {
   return (
     <div className="w-full font-urbanist" id="home">
       {/* product */}
-      {/* hero */}
-      <section className="w-full bg-product bg-cover bg-no-repeat bg-center">
-        <div className="w-full h-full bg-black/70">
-          <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-20 pb-10 h-fit lg:h-[500px] flex flex-col items-center justify-center">
-            <h1 className="text-5xl text-white font-bold">Produk Kami</h1>
-            <h3 className="text-xl text-white text-center max-w-[883px] mt-8 leading-loose">
-              Setiap potongan mebel jati kami dibuat dari bahan pilihan yang tahan lama, memberikan keindahan alami yang
-              menambah kemewahan di setiap ruangan.
-            </h3>
-          </div>
-        </div>
-      </section>
-      {/* end section */}
-      {/* product */}
-      <section className="w-full bg-white mt-4" id="about">
-        <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 flex flex-col gap-4 items-center">
+      <section className="w-full bg-white py-4" id="about">
+        <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 flex flex-col gap-4 items-center mt-8">
           {/* populer */}
-          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center">
-            <h2 className="text-[32px] text-slate-700 font-bold">Paling Populer</h2>
+          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div className="w-fit text-slate-500">
+              <h4>Hasil Pencarian</h4>
+              <h2 className="text-2xl text-slate-700 font-bold">{searchProduct}</h2>
+            </div>
             <div className="flex items-center justify-between w-full md:w-fit md:justify-start mt-6 md:mt-0">
               <div className={`relative w-full md:w-[235px]`}>
                 <form onSubmit={handleSearch}>
@@ -166,7 +155,7 @@ function Product() {
                 </form>
                 <FaSearch
                   className="absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer text-slate-400 hover:text-slate-700 text-[23px]"
-                  onClick={() => handleSearch}
+                  onClick={handleSearch}
                 />
               </div>
               <div
@@ -195,6 +184,7 @@ function Product() {
                     <option disabled value={""}>
                       Pilih Kategori
                     </option>
+                    <option value={"Semua"}>Semua</option>
                     <option value={"Lemari"}>Lemari</option>
                     <option value={"Kursi"}>Kursi</option>
                     <option value={"Sofa"}>Sofa</option>
@@ -208,104 +198,21 @@ function Product() {
               </dialog>
             </div>
           </div>
-          <div className="w-full grid grid-cols-4 gap-5 mt-4">
-            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg col-span-4 md:col-span-2 lg:col-span-1 order-last lg:order-first">
-              <div className="w-full flex flex-col items-end">
-                <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">Brown Chair</h2>
-                <h4 className="text-[15px] text-slate-500 text-start z-10">Kursi indah dan nyaman</h4>
-                <Link
-                  href={"/product/2"}
-                  className="py-[5px] px-4 bg-slate-600 hover:bg-slate-700 text-white text-[13px] rounded-[10px] mt-5 z-10"
-                >
-                  Lihat Produk
-                </Link>
-              </div>
-              <Image
-                src={"/assets/product/brown-chair.png"}
-                alt="brown-chair"
-                width={200}
-                height={200}
-                className="w-[155px] h-auto absolute -bottom-6 left-7"
-              />
-            </div>
-            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] col-span-4 lg:col-span-2 shadow-lg">
-              <div className="w-full flex gap-4 h-full items-center">
-                <div className="w-1/2 h-full">
-                  <Image
-                    src={"/assets/product/modern-arm-chair.png"}
-                    alt="modern-arm-chair"
-                    width={200}
-                    height={200}
-                    className="w-auto h-full ms-auto me-6"
-                  />
-                </div>
-                <div className="w-1/2 flex flex-col items-start">
-                  <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10 line-clamp-2 md:line-clamp-none">
-                    Modern Arm Chair
-                  </h2>
-                  <h4 className="text-[15px] text-slate-500 text-start z-10 line-clamp-2 md:line-clamp-none">
-                    Kursi minimalis yang mengutamakan kenyamanan dan gaya kontemporer nan klasik
-                  </h4>
-                  <Link
-                    href={"/product/1"}
-                    className="py-[5px] px-4 bg-slate-600 hover:bg-slate-700 text-white text-[13px] rounded-[10px] mt-5 z-10"
-                  >
-                    Lihat Produk
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg col-span-4 md:col-span-2 lg:col-span-1">
-              <div className="w-full flex flex-col items-start">
-                <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">Small Cabinet</h2>
-                <h4 className="text-[15px] text-slate-500 text-start z-10">Bentuk nyaman dan stylish</h4>
-                <Link
-                  href={"/product/10"}
-                  className="py-[5px] px-4 bg-slate-600 hover:bg-slate-700 text-white text-[13px] rounded-[10px] mt-5 z-10"
-                >
-                  Lihat Produk
-                </Link>
-              </div>
-              <Image
-                src={"/assets/product/small-cabinet.png"}
-                alt="small-cabinet"
-                width={200}
-                height={200}
-                className="w-[175px] h-auto absolute -bottom-4 right-2"
-              />
-            </div>
-          </div>
-          {/* new */}
-          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center mt-24">
-            <h2 className="text-[32px] text-slate-700 font-bold">Produk Terbaru</h2>
-            <div className="flex items-center mt-4 md:mt-0 group">
-              <Link href={"#"} className="text-slate-500 group-hover:text-slate-700 font-semibold">
-                Lihat lebih banyak
-              </Link>
-              <FaArrowRight className="text-slate-500 group-hover:text-slate-700 text-lg ms-2" />
-            </div>
-          </div>
           <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {products.map((element, index) => {
-              return (
-                <ProductCard
-                  key={index}
-                  id={element?.id}
-                  name={element?.name}
-                  category={element?.category}
-                  price={element?.price}
-                  picture={element?.pictures[0]}
-                />
-              );
-            })}
-          </div>
-          <div className="w-full relative h-[219px] rounded-tr-[50px] rounded-bl-[50px] bg-info bg-center bg-cover overflow-hidden mt-24 mb-6">
-            <div className="w-full h-full bg-black/50 flex justify-center items-center p-8">
-              <h4 className="text-white text-xl text-center max-w-[770px] leading-loose">
-                Jika kamu ingin melakukan <span className="font-bold italic">custom desain furniture</span> , jangan
-                ragu untuk menghubungi kami. Kami siap membantu mewujudkannya sesuai dengan keinginan dan kebutuhanmu.
-              </h4>
-            </div>
+            {products
+              .filter((e) => e.name.toLocaleLowerCase().includes(searchProduct))
+              .map((element, index) => {
+                return (
+                  <ProductCard
+                    key={index}
+                    id={element?.id}
+                    name={element?.name}
+                    category={element?.category}
+                    price={element?.price}
+                    picture={element?.pictures[0]}
+                  />
+                );
+              })}
           </div>
         </div>
       </section>
@@ -314,4 +221,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default SearchProduct;
