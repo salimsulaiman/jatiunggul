@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { ReactNode } from "react";
+import ProgressiveImage from "./ProgressiveImage";
 
 interface ProductDetail {
   id: number;
@@ -20,13 +21,22 @@ function ProductCard({ id, name, category, price, picture }: ProductDetail) {
     <div className=" bg-white rounded-xl border-seashell-100 transition-all ease-in-out duration-500 flex flex-col justify-between">
       <div className="w-full p-2">
         <div className="w-full h-[215px] rounded-t-xl overflow-hidden">
-          <Image
-            src={`/assets/product/${picture}`}
+          {/* <Image
+            src={picture}
             alt="set-meja-makan.jpg"
             width={500}
             height={500}
             quality={50}
             className="h-full w-auto mx-auto"
+          /> */}
+          <ProgressiveImage
+            src={picture}
+            alt={picture}
+            width={500}
+            height={500}
+            quality={50}
+            className="h-full w-auto mx-auto"
+            loading="lazy"
           />
         </div>
         <h3 className="text-slate-500 mt-4 text-base line-clamp-1 px-5">{name}</h3>

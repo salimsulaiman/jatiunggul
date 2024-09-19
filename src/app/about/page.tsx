@@ -10,9 +10,8 @@ function About() {
           <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-20 pb-10 h-fit lg:h-[500px] flex flex-col items-center justify-center">
             <h1 className="text-5xl text-white font-bold">Tentang Kami</h1>
             <h3 className="text-xl text-white text-center max-w-[883px] mt-8 leading-loose">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-              tellus..
+              Kemi berkomitmen menghadirkan karya mebel berkualitas tinggi yang mencerminkan keindahan dan kekuatan kayu
+              jati asli.
             </h3>
           </div>
         </div>

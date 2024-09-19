@@ -14,9 +14,8 @@ function Contact() {
           <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-20 pb-10 h-fit lg:h-[500px] flex flex-col items-center justify-center">
             <h1 className="text-5xl text-white font-bold">Kontak Kami</h1>
             <h3 className="text-xl text-white text-center max-w-[883px] mt-8 leading-loose">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-              tellus..
+              Kami siap membantu Anda dalam setiap langkah untuk menemukan mebel jati yang sempurna bagi rumah atau
+              bisnis Anda.
             </h3>
           </div>
         </div>
