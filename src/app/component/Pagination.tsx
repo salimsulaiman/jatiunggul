@@ -11,7 +11,7 @@ function Pagination(props: { currentPage: number; totalPages: number; paginate: 
     pageNumbers.push(i);
   }
 
-  return (
+  return totalPages > 1 ? (
     <nav>
       <ul className="w-full flex gap-4 justify-center">
         {pageNumbers.map((number) => (
@@ -30,6 +30,8 @@ function Pagination(props: { currentPage: number; totalPages: number; paginate: 
         ))}
       </ul>
     </nav>
+  ) : (
+    <div></div>
   );
 }
 

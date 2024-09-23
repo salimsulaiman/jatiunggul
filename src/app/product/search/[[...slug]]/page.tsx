@@ -129,7 +129,7 @@ function SearchProduct(props: { searchParams: { product: string } }) {
     },
     {
       id: 11,
-      name: "Small Cabinet",
+      name: "Small Cabinet V2",
       category: "Lemari",
       price: 1700000,
       pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
@@ -137,7 +137,7 @@ function SearchProduct(props: { searchParams: { product: string } }) {
     },
     {
       id: 12,
-      name: "Small Cabinet",
+      name: "Small Cabinet V3",
       category: "Lemari",
       price: 1700000,
       pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
@@ -145,7 +145,7 @@ function SearchProduct(props: { searchParams: { product: string } }) {
     },
     {
       id: 13,
-      name: "Small Cabinet",
+      name: "Small Cabinet V4",
       category: "Lemari",
       price: 1700000,
       pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
@@ -267,18 +267,35 @@ function SearchProduct(props: { searchParams: { product: string } }) {
               </dialog>
             </div>
           </div>
-          <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {currentProducts.map((element, index) => (
-              <ProductCard
-                key={index}
-                id={element?.id}
-                name={element?.name}
-                category={element?.category}
-                price={element?.price}
-                picture={element?.pictures[0]}
+          {currentProducts.length === 0 ? (
+            <div className="w-full flex flex-col items-center justify-center">
+              <Image
+                src={"/assets/productNotfound.png"}
+                alt="Not found"
+                width={1000}
+                height={1000}
+                quality={100}
+                className="w-64"
               />
-            ))}
-          </div>
+              <h2 className="text-slate-700 font-medium text-2xl mt-6">Maaf, produk yang kamu cari tidak tersedia</h2>
+              <h3 className="text-slate-400 font-normal text-xl mt-2">
+                Coba gunakan kata kunci lain atau ubah filter pencarianmu
+              </h3>
+            </div>
+          ) : (
+            <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              {currentProducts.map((element, index) => (
+                <ProductCard
+                  key={index}
+                  id={element?.id}
+                  name={element?.name}
+                  category={element?.category}
+                  price={element?.price}
+                  picture={element?.pictures[0]}
+                />
+              ))}
+            </div>
+          )}
           <div className="w-full mt-4-">
             <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
           </div>
