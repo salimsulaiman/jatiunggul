@@ -4,14 +4,18 @@ import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import ProductCard from "@/app/component/ProductCard";
 import { useRouter } from "next/navigation";
+import Pagination from "@/app/component/Pagination";
 
 function SearchProduct(props: { searchParams: { product: string } }) {
   const { searchParams } = props;
   const searchProduct = searchParams.product;
   const router = useRouter();
 
-  const [category, setCategory] = useState<string>("");
+  const [category, setCategory] = useState<string>("Semua");
   const [search, setSearch] = useState<string>("");
+
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const productsPerPage = 10;
 
   const products = [
     {
@@ -123,12 +127,70 @@ function SearchProduct(props: { searchParams: { product: string } }) {
       pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
       desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
     },
+    {
+      id: 11,
+      name: "Small Cabinet",
+      category: "Lemari",
+      price: 1700000,
+      pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
+      desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
+    },
+    {
+      id: 12,
+      name: "Small Cabinet",
+      category: "Lemari",
+      price: 1700000,
+      pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
+      desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
+    },
+    {
+      id: 13,
+      name: "Small Cabinet",
+      category: "Lemari",
+      price: 1700000,
+      pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
+      desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
+    },
   ];
+  const filteredProducts = products.filter((product) => {
+    // Filter by search term
+    const matchesSearch = product.name.toLocaleLowerCase().includes(searchProduct.toLocaleLowerCase());
+
+    // Filter by category
+    const matchesCategory = category === "Semua" || product.category === category;
+
+    // Return true if both search and category match
+    return matchesSearch && matchesCategory;
+  });
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  // const filteredProducts = products.filter((product) => {
+  //   // Filter by search term and category
+  //   const matchesSearch = product.name.toLocaleLowerCase().includes(searchProduct.toLocaleLowerCase());
+  //   const matchesCategory = category === "Semua" || product.category === category;
+  //   return matchesSearch && matchesCategory;
+  // });
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+  // Change page
+  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
+
+  const handleCategoryChange = (e: any) => {
+    setCategory(e.target.value);
+    const filterButton = document.getElementById("filterButton") as HTMLDialogElement;
+    filterButton?.close();
+    setCurrentPage(1);
+  };
 
   const handleSearch = (e: any) => {
     e.preventDefault();
     router.push(`/product/search?product=${search}`);
     setSearch("");
+    setCategory("Semua");
+    setCurrentPage(1);
   };
 
   return (
@@ -139,8 +201,15 @@ function SearchProduct(props: { searchParams: { product: string } }) {
           {/* populer */}
           <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
             <div className="w-fit text-slate-500">
-              <h4>Hasil Pencarian</h4>
-              <h2 className="text-2xl text-slate-700 font-bold">{searchProduct}</h2>
+              {searchProduct.length == 0 ? (
+                <h2 className="text-[32px] text-slate-700 font-bold">Produk</h2>
+              ) : (
+                <>
+                  <h4 className="text-slate-700">Hasil Pencarian</h4>
+                  <h2 className="text-2xl text-slate-700 font-bold">{searchProduct}</h2>
+                  {category && <div className="w-fit px-4 py-1 mt-1 rounded-lg text-sm bg-slate-200">{category}</div>}
+                </>
+              )}
             </div>
             <div className="flex items-center justify-between w-full md:w-fit md:justify-start mt-6 md:mt-0">
               <div className={`relative w-full md:w-[235px]`}>
@@ -179,7 +248,7 @@ function SearchProduct(props: { searchParams: { product: string } }) {
                   <select
                     className="select select-bordered w-full mt-4"
                     value={category}
-                    onChange={(e) => setCategory(e.target.value)}
+                    onChange={handleCategoryChange}
                   >
                     <option disabled value={""}>
                       Pilih Kategori
@@ -199,20 +268,19 @@ function SearchProduct(props: { searchParams: { product: string } }) {
             </div>
           </div>
           <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {products
-              .filter((e) => e.name.toLocaleLowerCase().includes(searchProduct.toLocaleLowerCase()))
-              .map((element, index) => {
-                return (
-                  <ProductCard
-                    key={index}
-                    id={element?.id}
-                    name={element?.name}
-                    category={element?.category}
-                    price={element?.price}
-                    picture={element?.pictures[0]}
-                  />
-                );
-              })}
+            {currentProducts.map((element, index) => (
+              <ProductCard
+                key={index}
+                id={element?.id}
+                name={element?.name}
+                category={element?.category}
+                price={element?.price}
+                picture={element?.pictures[0]}
+              />
+            ))}
+          </div>
+          <div className="w-full mt-4-">
+            <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
           </div>
         </div>
       </section>

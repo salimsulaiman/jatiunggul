@@ -6,12 +6,15 @@ import { BiArrowFromLeft } from "react-icons/bi";
 import { FaArrowRight, FaSearch, FaShieldAlt } from "react-icons/fa";
 import ProductCard from "../component/ProductCard";
 import { useRouter } from "next/navigation";
+import Pagination from "../component/Pagination";
 
 function Product() {
   const router = useRouter();
 
   const [category, setCategory] = useState<string>("");
   const [search, setSearch] = useState<string>("");
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const productsPerPage = 10;
 
   const products = [
     {
@@ -123,7 +126,39 @@ function Product() {
       pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
       desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
     },
+    {
+      id: 11,
+      name: "Small Cabinet",
+      category: "Lemari",
+      price: 1700000,
+      pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
+      desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
+    },
+    {
+      id: 12,
+      name: "Small Cabinet",
+      category: "Lemari",
+      price: 1700000,
+      pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
+      desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
+    },
+    {
+      id: 13,
+      name: "Small Cabinet",
+      category: "Lemari",
+      price: 1700000,
+      pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
+      desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
+    },
   ];
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+  const totalPages = Math.ceil(products.length / productsPerPage);
+
+  // Change page
+  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -286,7 +321,7 @@ function Product() {
             </div>
           </div>
           <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {products.map((element, index) => {
+            {currentProducts.map((element, index) => {
               return (
                 <ProductCard
                   key={index}
@@ -298,6 +333,9 @@ function Product() {
                 />
               );
             })}
+          </div>
+          <div className="w-full mt-4-">
+            <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
           </div>
           <div className="w-full relative h-[219px] rounded-tr-[50px] rounded-bl-[50px] bg-info bg-center bg-cover overflow-hidden mt-24 mb-6">
             <div className="w-full h-full bg-black/50 flex justify-center items-center p-8">
