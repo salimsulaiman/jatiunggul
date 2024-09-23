@@ -128,7 +128,7 @@ function Product() {
     },
     {
       id: 11,
-      name: "Small Cabinet",
+      name: "Small Cabinet V2",
       category: "Lemari",
       price: 1700000,
       pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
@@ -136,7 +136,7 @@ function Product() {
     },
     {
       id: 12,
-      name: "Small Cabinet",
+      name: "Small Cabinet V3",
       category: "Lemari",
       price: 1700000,
       pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
@@ -144,7 +144,7 @@ function Product() {
     },
     {
       id: 13,
-      name: "Small Cabinet",
+      name: "Small Cabinet V4",
       category: "Lemari",
       price: 1700000,
       pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],

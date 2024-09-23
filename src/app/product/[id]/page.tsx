@@ -2,7 +2,7 @@
 import ProductCard from "@/app/component/ProductCard";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,6 +17,8 @@ import ProgressiveImage from "@/app/component/ProgressiveImage";
 function ProductDetail(props: { params: { id: string } }) {
   const { params } = props;
   const id = parseInt(params.id);
+  const router = useRouter();
+  // href="//api.whatsapp.com/send?phone=91MOBILE_NUMBER&text=WHATEVER_LINK_OR_TEXT_YOU_WANT_TO_SEND"
 
   const [currentPicture, setCurrentPicture] = useState<string>("");
   const products = [
@@ -124,6 +126,30 @@ function ProductDetail(props: { params: { id: string } }) {
     {
       id: 10,
       name: "Small Cabinet",
+      category: "Lemari",
+      price: 1700000,
+      pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
+      desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
+    },
+    {
+      id: 11,
+      name: "Small Cabinet V2",
+      category: "Lemari",
+      price: 1700000,
+      pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
+      desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
+    },
+    {
+      id: 12,
+      name: "Small Cabinet V3",
+      category: "Lemari",
+      price: 1700000,
+      pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
+      desc: "Lemari kecil dengan desain minimalis yang ideal untuk menyimpan barang-barang kecil. Dilengkapi dengan rak dan laci untuk memudahkan organisasi, lemari ini sangat cocok untuk digunakan di ruang tamu, kamar tidur, atau ruang kerja, memberikan solusi penyimpanan yang rapi dan bergaya.",
+    },
+    {
+      id: 13,
+      name: "Small Cabinet V4",
       category: "Lemari",
       price: 1700000,
       pictures: ["https://utfs.io/f/UyKYMyzOlFb23p0zCk1otYWzs8QShwIZ4M0pKbG6iFlOyA1f"],
@@ -242,7 +268,8 @@ function ProductDetail(props: { params: { id: string } }) {
             <h4 className="text-jumbo-700 mt-2 leading-loose">{product?.desc}</h4>
 
             <Link
-              href={"#"}
+              target="_blank"
+              href={`//api.whatsapp.com/send?phone=081910596773&text=Permisi, saya ingin menanyakan produk *${product?.name}*`}
               className="bg-slate-600 hover:bg-slate-700 px-8 py-3 flex w-fit text-white font-semibold rounded-full mt-6 items-center"
             >
               <span className="me-2 text-xl">
