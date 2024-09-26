@@ -24,3 +24,17 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid JSON or Server Error" }, { status: 500 });
   }
 }
+
+export async function GET(request: Request) {
+  try {
+    const product = await prisma.product.findMany({
+      include: {
+        category: true,
+      },
+    });
+
+    return NextResponse.json(product, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({ error: "Invalid JSON or Server Error" }, { status: 500 });
+  }
+}
