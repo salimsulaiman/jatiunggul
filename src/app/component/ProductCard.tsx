@@ -4,7 +4,7 @@ import React, { ReactNode } from "react";
 import ProgressiveImage from "./ProgressiveImage";
 
 interface ProductDetail {
-  id: number;
+  id: string;
   name: string;
   category: string;
   price: number;
