@@ -49,13 +49,14 @@ function page() {
               Kami menawarkan mebel kayu berkualitas tinggi dengan desain unik dan elegan. Dibuat dengan teliti dari
               bahan terbaik menjamin keindahan alami, daya tahan, dan kenyamanan maksimal.
             </h4>
-            <div className="h-[200px] md:h-[300px] w-full mx-auto bg-slate-400 relative rounded-xl overflow-hidden block lg:hidden mt-8">
+            <div className="h-[200px] md:h-[300px] w-full mx-auto bg-slate-200 relative rounded-xl overflow-hidden block lg:hidden mt-8">
               <Image
                 src={"/assets/about.jpg"}
                 alt="living room"
                 height={1000}
                 width={1000}
-                quality={100}
+                quality={80}
+                priority
                 className="object-cover w-full h-full object-center"
               />
             </div>
@@ -183,7 +184,7 @@ function page() {
       </section> */}
       <section className="w-full bg-slate-100 mt-4" id="product">
         <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 grid grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          <div className="block md:hidden w-full col-span-3 text-center">
+          <div className="block md:hidden w-full col-span-3">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-700 leading-tight">
               Apa Yang Sedang Kamu Cari?
             </h2>

@@ -6,10 +6,10 @@ function About() {
       {/* product */}
       {/* hero */}
       <section className="w-full bg-about bg-cover bg-no-repeat bg-center">
-        <div className="w-full h-full bg-black/70">
-          <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-20 pb-10 h-fit lg:h-[500px] flex flex-col items-center justify-center">
-            <h1 className="text-5xl text-white font-bold">Tentang Kami</h1>
-            <h3 className="text-xl text-white text-center max-w-[883px] mt-8 leading-loose">
+        <div className="w-full h-full bg-black/70 pt-7 md:pt-0">
+          <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-20 pb-10 h-fit md:h-[400px] lg:h-[500px] flex flex-col items-center justify-center">
+            <h1 className="text-2xl md:text-5xl text-white font-bold">Tentang Kami</h1>
+            <h3 className="hidden md:block text-xl text-white text-center max-w-[883px] mt-8 leading-loose">
               Kemi berkomitmen menghadirkan karya mebel berkualitas tinggi yang mencerminkan keindahan dan kekuatan kayu
               jati asli.
             </h3>
@@ -17,7 +17,7 @@ function About() {
         </div>
       </section>
       {/* end section */}
-      <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-10 pb-10 flex flex-col md:flex-row gap-20 mt-10 md:mt-20 items-center">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-10 pb-10 flex flex-col md:flex-row gap-20 mt-0 md:mt-20 items-center">
         <div className="w-full lg:w-5/12 hidden lg:grid grid-cols-2 gap-6 mx-auto">
           <div className="h-[238px] bg-slate-200 mt-[44px] rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px]"></div>
           <div className="h-[238px] bg-slate-200 rounded-tl-[10px] rounded-tr-[50px] rounded-br-[10px]"></div>
@@ -87,9 +87,9 @@ function About() {
         </div>
       </div>
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 mb-16 md:mb-28 mt-16 md:mt-28">
-        <div className="w-full relative h-[262px] rounded-tl-[50px] rounded-br-[50px] bg-quotes bg-center bg-cover overflow-hidden">
+        <div className="w-full relative h-fit md:h-[262px] rounded-tl-2xl md:rounded-tl-[50px] rounded-br-2xl md:rounded-br-[50px] bg-quotes bg-center bg-cover overflow-hidden">
           <div className="w-full h-full bg-black/50 flex justify-center items-center p-8">
-            <h4 className="text-white text-base md:text-xl text-center max-w-[770px] font-light italic leading-loose">
+            <h4 className="text-white text-sm md:text-xl text-center max-w-[770px] font-light italic leading-loose">
               <q>
                 Furniture pilihan bukan hanya tentang gaya, tapi juga tentang kenyamanan dan kualitas yang menemani
                 setiap momen berharga di rumah Anda.
