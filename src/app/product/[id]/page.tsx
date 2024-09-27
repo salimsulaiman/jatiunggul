@@ -36,6 +36,7 @@ function ProductDetail(props: { params: { id: string } }) {
 
   const [currentPicture, setCurrentPicture] = useState<string>("");
   const [isLoading, setLoading] = useState(true);
+  const [isLoadingProducts, setLoadingProducts] = useState(true);
   const [data, setData] = useState<Product | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
 
@@ -65,7 +66,7 @@ function ProductDetail(props: { params: { id: string } }) {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
-        setLoading(false);
+        setLoadingProducts(false);
       });
   }, []);
 
@@ -86,7 +87,9 @@ function ProductDetail(props: { params: { id: string } }) {
     <div className="w-full font-urbanist" id="home">
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-36 pb-10 flex flex-col lg:flex-row justify-center gap-16">
         {isLoading ? (
-          <div>Loading...</div>
+          <div className="w-full h-20 flex items-center justify-center">
+            <span className="loading loading-dots loading-lg"></span>
+          </div>
         ) : (
           <>
             <div className="w-full lg:w-1/2">
@@ -102,8 +105,8 @@ function ProductDetail(props: { params: { id: string } }) {
                       className={"h-full w-full object-contain"}
                     />
                   ) : (
-                    <div className="h-full w-full flex items-center justify-center bg-gray-200 absolute">
-                      <p className="text-gray-600">No image available</p>
+                    <div className="h-full w-full flex items-center justify-center animate-pulse">
+                      {/* <p className="text-gray-600">No image available</p> */}
                     </div>
                   )}
                 </div>
@@ -136,8 +139,8 @@ function ProductDetail(props: { params: { id: string } }) {
                             loading="lazy"
                           />
                         ) : (
-                          <div className="h-full w-full flex items-center justify-center bg-gray-200">
-                            <p className="text-gray-600">No image available</p>
+                          <div className="h-full w-full flex items-center justify-center animate-pulse">
+                            {/* <p className="text-gray-600">No image available</p> */}
                           </div>
                         )}
                       </SwiperSlide>
@@ -155,7 +158,7 @@ function ProductDetail(props: { params: { id: string } }) {
 
                 <Link
                   target="_blank"
-                  href={`//api.whatsapp.com/send?phone=081910596773&text=Permisi, saya ingin menanyakan produk *${product?.name}*`}
+                  href={`//api.whatsapp.com/send?phone=081910596773&text=Permisi, saya ingin menanyakan produk *${data?.name}*`}
                   className="bg-slate-600 hover:bg-slate-700 px-8 py-3 flex w-fit text-white font-semibold rounded-full mt-6 items-center"
                 >
                   <span className="me-2 text-xl">
@@ -179,18 +182,20 @@ function ProductDetail(props: { params: { id: string } }) {
           </div>
         </div>
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          {products.map((element, index) => {
-            return (
-              <ProductCard
-                key={index}
-                id={element?.id}
-                name={element?.name}
-                category={element?.category?.name}
-                price={element?.price}
-                picture={element?.pictures[0]}
-              />
-            );
-          })}
+          {products
+            .filter((element) => element?.categoryId === data?.categoryId && element?.id !== data?.id)
+            .map((element, index) => {
+              return (
+                <ProductCard
+                  key={index}
+                  id={element?.id}
+                  name={element?.name}
+                  category={element?.category?.name}
+                  price={element?.price}
+                  picture={element?.pictures[0]}
+                />
+              );
+            })}
         </div>
       </div>
     </div>

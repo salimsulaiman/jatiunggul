@@ -10,10 +10,10 @@ function Contact() {
       {/* product */}
       {/* hero */}
       <section className="w-full bg-contact bg-cover bg-no-repeat bg-center">
-        <div className="w-full h-full bg-black/70">
+        <div className="w-full h-full bg-black/70 pt-7 md:pt-0">
           <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-20 pb-10 h-fit lg:h-[500px] flex flex-col items-center justify-center">
-            <h1 className="text-5xl text-white font-bold">Kontak Kami</h1>
-            <h3 className="text-xl text-white text-center max-w-[883px] mt-8 leading-loose">
+            <h1 className="text-2xl md:text-5xl text-white font-bold">Kontak Kami</h1>
+            <h3 className="hidden md:block text-xl text-white text-center max-w-[883px] mt-8 leading-loose">
               Kami siap membantu Anda dalam setiap langkah untuk menemukan mebel jati yang sempurna bagi rumah atau
               bisnis Anda.
             </h3>
@@ -23,7 +23,7 @@ function Contact() {
       {/* end section */}
       {/* product */}
       <section className="w-full bg-white mt-4" id="about">
-        <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-10 md:py-20 flex flex-col lg:flex-row gap-10 items-center">
+        <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 py-8 md:py-20 flex flex-col lg:flex-row gap-10 items-center">
           <div className="w-full lg:w-1/2">
             <h1 className="text-3xl md:text-4xl text-slate-700 font-bold">Hubungi Kami Segera</h1>
             <h4 className="text-slate-500 mt-4 leading-loose">
@@ -104,7 +104,7 @@ function Contact() {
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1980.1804652108451!2d109.0453554!3d-6.9666785!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fbc627b19d213%3A0xb609be60caf06ec8!2sJp%20Jati%20Unggul%20Meubel!5e0!3m2!1sen!2sid!4v1723366950714!5m2!1sen!2sid"
             width="600"
             height="450"
-            className="w-full h-[560px] rounded-xl"
+            className="w-full h-[300px] md:h-[560px] rounded-xl"
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
