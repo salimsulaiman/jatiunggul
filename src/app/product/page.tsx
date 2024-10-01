@@ -49,6 +49,10 @@ function Product() {
       });
   }, []);
 
+  const popularProduct = (idProduct: string) => {
+    return data.filter((el) => el?.id == idProduct);
+  };
+
   const filteredProducts = data?.filter((product) => {
     const matchesCategory = category === "Semua" || product?.category?.name === category;
 
@@ -156,10 +160,12 @@ function Product() {
           <div className="w-full grid grid-cols-4 gap-5 mt-4">
             <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg col-span-4 md:col-span-2 lg:col-span-1 order-last lg:order-first">
               <div className="w-full flex flex-col items-end">
-                <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">Brown Chair</h2>
+                <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">
+                  {popularProduct("66f4fb4a63ef97d9552b55be")[0]?.name}
+                </h2>
                 <h4 className="text-[15px] text-slate-500 text-start z-10">Kursi indah dan nyaman</h4>
                 <Link
-                  href={"/product/2"}
+                  href={`/product/${popularProduct("66f4fb4a63ef97d9552b55be")[0]?.id}`}
                   className="py-[5px] px-4 bg-slate-600 hover:bg-slate-700 text-white text-[13px] rounded-[10px] mt-5 z-10"
                 >
                   Lihat Produk
@@ -186,13 +192,13 @@ function Product() {
                 </div>
                 <div className="w-1/2 flex flex-col items-start">
                   <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10 line-clamp-2 md:line-clamp-none">
-                    Modern Arm Chair
+                    {popularProduct("66f4faba63ef97d9552b55bb")[0]?.name}
                   </h2>
                   <h4 className="text-[15px] text-slate-500 text-start z-10 line-clamp-2 md:line-clamp-none">
                     Kursi minimalis yang mengutamakan kenyamanan dan gaya kontemporer nan klasik
                   </h4>
                   <Link
-                    href={"/product/1"}
+                    href={`/product/${popularProduct("66f4faba63ef97d9552b55bb")[0]?.id}`}
                     className="py-[5px] px-4 bg-slate-600 hover:bg-slate-700 text-white text-[13px] rounded-[10px] mt-5 z-10"
                   >
                     Lihat Produk
@@ -202,10 +208,12 @@ function Product() {
             </div>
             <div className="h-[277px] bg-alabaster-50 rounded-[20px] relative p-[31px] overflow-hidden shadow-lg col-span-4 md:col-span-2 lg:col-span-1">
               <div className="w-full flex flex-col items-start">
-                <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">Small Cabinet</h2>
+                <h2 className="text-[28px] text-slate-500 font-extrabold uppercase text-start z-10">
+                  {popularProduct("66f5089963ef97d9552b55c5")[0]?.name}
+                </h2>
                 <h4 className="text-[15px] text-slate-500 text-start z-10">Bentuk nyaman dan stylish</h4>
                 <Link
-                  href={"/product/10"}
+                  href={`/product/${popularProduct("66f5089963ef97d9552b55c5")[0]?.id}`}
                   className="py-[5px] px-4 bg-slate-600 hover:bg-slate-700 text-white text-[13px] rounded-[10px] mt-5 z-10"
                 >
                   Lihat Produk
