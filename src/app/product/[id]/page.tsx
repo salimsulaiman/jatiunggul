@@ -60,7 +60,7 @@ function ProductDetail(props: { params: { id: string } }) {
     fetch(`/api/product/`, {
       cache: "force-cache",
       next: {
-        revalidate: 3600 * 24,
+        revalidate: 10,
       },
     })
       .then((res) => res.json())
@@ -81,6 +81,20 @@ function ProductDetail(props: { params: { id: string } }) {
       style: "currency",
       currency: "IDR",
     });
+  };
+
+  const handleChat = () => {
+    fetch(`/api/product/popular`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", // mengatur header untuk JSON
+      },
+      body: JSON.stringify({
+        productId: id,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {});
   };
 
   return (
@@ -124,7 +138,9 @@ function ProductDetail(props: { params: { id: string } }) {
                   {data?.pictures.map((element: any, index: number) => {
                     return (
                       <SwiperSlide
-                        className="bg-slate-100 rounded-xl aspect-square relative overflow-hidden cursor-pointer"
+                        className={`bg-slate-100 rounded-xl aspect-square relative overflow-hidden cursor-pointer  ${
+                          element == currentPicture && "border-4 border-aluminium-500"
+                        }`}
                         key={index}
                         onClick={() => changePicture(element)}
                       >
@@ -160,6 +176,7 @@ function ProductDetail(props: { params: { id: string } }) {
                   target="_blank"
                   href={`//api.whatsapp.com/send?phone=081910596773&text=Permisi, saya ingin menanyakan produk *${data?.name}*`}
                   className="bg-slate-600 hover:bg-slate-700 px-8 py-3 flex w-fit text-white font-semibold rounded-full mt-6 items-center"
+                  onClick={handleChat}
                 >
                   <span className="me-2 text-xl">
                     <FaWhatsapp />
@@ -175,28 +192,34 @@ function ProductDetail(props: { params: { id: string } }) {
         <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
           <h2 className="text-[32px] text-slate-700 font-bold">Produk Terkait</h2>
           <div className="flex items-center group mt-4 md:mt-0">
-            <Link href={"#"} className="text-slate-500 group-hover:text-slate-700 font-semibold">
+            <Link href={"/product/search?product"} className="text-slate-500 group-hover:text-slate-700 font-semibold">
               Lihat lebih banyak
             </Link>
             <FaArrowRight className="text-slate-500 group-hover:text-slate-700 text-lg ms-2" />
           </div>
         </div>
-        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          {products
-            .filter((element) => element?.categoryId === data?.categoryId && element?.id !== data?.id)
-            .map((element, index) => {
-              return (
-                <ProductCard
-                  key={index}
-                  id={element?.id}
-                  name={element?.name}
-                  category={element?.category?.name}
-                  price={element?.price}
-                  picture={element?.pictures[0]}
-                />
-              );
-            })}
-        </div>
+        {isLoadingProducts ? (
+          <div className="w-full h-20 flex items-center justify-center">
+            <span className="loading loading-dots loading-lg"></span>
+          </div>
+        ) : (
+          <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {products
+              .filter((element) => element?.categoryId === data?.categoryId && element?.id !== data?.id)
+              .map((element, index) => {
+                return (
+                  <ProductCard
+                    key={index}
+                    id={element?.id}
+                    name={element?.name}
+                    category={element?.category?.name}
+                    price={element?.price}
+                    picture={element?.pictures[0]}
+                  />
+                );
+              })}
+          </div>
+        )}
       </div>
     </div>
   );
