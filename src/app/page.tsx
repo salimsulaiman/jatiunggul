@@ -198,10 +198,10 @@ function page() {
               <h4 className="text-slate-400 mt-5 text-xl">Dapatkan barang terbaru segera dengan harga promo</h4>
             </div>
             <div className="w-full md:w-1/2 lg:w-full flex items-end lg:items-center justify-center md:justify-end lg:justify-start mb-0 lg:mb-6">
-              <div className="flex items-center cursor-pointer text-slate-600 hover:text-slate-700">
+              <Link href={'/product'} className="flex items-center cursor-pointer text-slate-600 hover:text-slate-700">
                 <h4 className="font-bold text-base sm:text-xl underline">Selengkapnya</h4>
                 <FaArrowRightLong className="text-xl ms-2" />
-              </div>
+              </Link>
             </div>
           </div>
           <div className="bg-slate-400 rounded-[4px] flex items-end justify-center relative overflow-hidden group h-250 sm:h-[300px] md:h-[450px]">
