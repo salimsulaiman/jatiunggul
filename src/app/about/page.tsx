@@ -1,4 +1,7 @@
+'use client';
 import React from "react";
+import ProgressiveImage from "../component/ProgressiveImage";
+import Image from "next/image";
 
 function About() {
   return (
@@ -19,19 +22,19 @@ function About() {
       {/* end section */}
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-6 pt-10 pb-10 flex flex-col md:flex-row gap-20 mt-0 md:mt-20 items-center">
         <div className="w-full lg:w-5/12 hidden lg:grid grid-cols-2 gap-6 mx-auto">
-          <div className="h-[238px] bg-slate-200 mt-[44px] rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px]"></div>
-          <div className="h-[238px] bg-slate-200 rounded-tl-[10px] rounded-tr-[50px] rounded-br-[10px]"></div>
-          <div className="h-[238px] bg-slate-200 rounded-tl-[10px] rounded-br-[10px] rounded-bl-[50px]"></div>
-          <div className="h-[238px] bg-slate-200 -mt-[44px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-[10px]"></div>
+          <div className="h-[238px] bg-slate-200 mt-[44px] rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] overflow-hidden relative"><ProgressiveImage src="/assets/about-meuble.png" alt="meuble-picture" width={1000} height={1000}  className={"h-full w-full object-cover"}/></div>
+          <div className="h-[238px] bg-slate-200 rounded-tl-[10px] rounded-tr-[50px] rounded-br-[10px] overflow-hidden relative"><ProgressiveImage src="/assets/teak-wood.jpg" alt="teak-wood" width={1000} height={1000}  className={"h-full w-full object-cover"}/></div>
+          <div className="h-[238px] bg-slate-200 rounded-tl-[10px] rounded-br-[10px] rounded-bl-[50px] overflow-hidden relative"><ProgressiveImage src="/assets/wood-production.jpg" alt="wood-production" width={1000} height={1000}  className={"h-full w-full object-cover"}/></div>
+          <div className="h-[238px] bg-slate-200 -mt-[44px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-[10px] overflow-hidden relative"><ProgressiveImage src="/assets/furniture-production.jpg" alt="furniture-production" width={1000} height={1000}  className={"h-full w-full object-cover"}/></div>
         </div>
         <div className="w-full lg:w-7/12">
           <h3 className="text-heather-300 font-bold text-xl">Sejak 2002</h3>
           <h2 className="text-outer-space-950 font-bold text-3xl md:text-[40px] mt-4">PT Jati Unggul Perkasa</h2>
           <div className="w-full md:w-8/12 lg:w-5/12 grid lg:hidden grid-cols-2 gap-6 mx-auto mt-12">
-            <div className="h-[238px] bg-slate-200 rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px]"></div>
-            <div className="h-[238px] bg-slate-200 rounded-tl-[10px] rounded-tr-[50px] rounded-br-[10px]"></div>
-            <div className="h-[238px] bg-slate-200 rounded-tl-[10px] rounded-br-[10px] rounded-bl-[50px]"></div>
-            <div className="h-[238px] bg-slate-200 rounded-tr-[10px] rounded-bl-[10px] rounded-br-[10px]"></div>
+            <div className="h-[238px] bg-slate-200 rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] overflow-hidden relative"><ProgressiveImage src="/assets/about-meuble.png" alt="meuble-picture" width={1000} height={1000}  className={"h-full w-full object-cover"}/></div>
+            <div className="h-[238px] bg-slate-200 rounded-tl-[10px] rounded-tr-[50px] rounded-br-[10px] overflow-hidden relative"><ProgressiveImage src="/assets/teak-wood.jpg" alt="teak-wood" width={1000} height={1000}  className={"h-full w-full object-cover"}/></div>
+            <div className="h-[238px] bg-slate-200 rounded-tl-[10px] rounded-br-[10px] rounded-bl-[50px] overflow-hidden relative"><ProgressiveImage src="/assets/wood-production.jpg" alt="wood-production" width={1000} height={1000}  className={"h-full w-full object-cover"}/></div>
+            <div className="h-[238px] bg-slate-200 rounded-tr-[10px] rounded-bl-[10px] rounded-br-[10px] overflow-hidden relative"><ProgressiveImage src="/assets/furniture-production.jpg" alt="furniture-production" width={1000} height={1000}  className={"h-full w-full object-cover"}/></div>
           </div>
           <h4 className="text-boulder-500 mt-12 lg:mt-4 leading-loose">
             Perusahaan yang bergerak di bidang pembuatan dan penjualan barang furniture berkualitas tinggi, dengan
@@ -66,7 +69,8 @@ function About() {
           </div>
           <div className="h-fit p-4 bg-zinc-100 rounded-lg col-span-2 md:col-span-1">
             <div className="w-full h-[217px] bg-slate-300 rounded-t-lg overflow-hidden relative">
-              <div className="w-full bg-gradient-to-t from-zinc-100 to-transparent h-10 absolute bottom-0"></div>
+              <div className="w-full bg-gradient-to-t from-zinc-100 to-transparent h-10 absolute bottom-0 z-10"></div>
+              <ProgressiveImage src="/assets/wood.jpg" alt="wood-picture" width={1000} height={1000}  className={"h-full w-full object-cover"}/>
             </div>
             <h3 className="text-xl font-bold text-outer-space-950 mt-2">Bahan Baku Pilihan</h3>
             <h4 className="text-boulder-500 mt-2 line-clamp-4">
@@ -76,7 +80,8 @@ function About() {
           </div>
           <div className="h-fit p-4 bg-zinc-100 rounded-lg col-span-2 md:col-span-1">
             <div className="w-full h-[217px] bg-slate-300 rounded-t-lg overflow-hidden relative">
-              <div className="w-full bg-gradient-to-t from-zinc-100 to-transparent h-10 absolute bottom-0"></div>
+              <div className="w-full bg-gradient-to-t from-zinc-100 to-transparent h-10 absolute bottom-0 z-10"></div>
+              <ProgressiveImage src="/assets/wood-furniture.jpg" alt="wood-furniture-picture" width={1000} height={1000}  className={"h-full w-full object-cover"}/>
             </div>
             <h3 className="text-xl font-bold text-outer-space-950 mt-2">Kualitas Produk Terjaga </h3>
             <h4 className="text-boulder-500 mt-2 line-clamp-4">

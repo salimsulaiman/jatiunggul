@@ -27,9 +27,7 @@ function Contact() {
           <div className="w-full lg:w-1/2">
             <h1 className="text-3xl md:text-4xl text-slate-700 font-bold">Hubungi Kami Segera</h1>
             <h4 className="text-slate-500 mt-4 leading-loose">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-              tellus..
+            Hubungi kami untuk informasi lebih lanjut mengenai koleksi furniture berkualitas kami. Tim kami siap membantu Anda menemukan produk yang sesuai dengan kebutuhan dan gaya Anda. Jangan ragu untuk menghubungi kami melalui kontak yang tersedia atau kunjungi showroom kami!
             </h4>
             <h3 className="text-lg text-slate-700 font-bold mt-14">Kontak</h3>
             <div className="w-full flex-col">
