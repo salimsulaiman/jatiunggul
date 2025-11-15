@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html data-theme="light" lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} overflow-x-hidden`}>
         <Navbar />
         {children}
         <Footer />
